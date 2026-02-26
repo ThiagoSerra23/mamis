@@ -243,8 +243,43 @@
                 transform: scale(1.05);
             }
 
-            100% {
-                transform: scale(1);
+        }
+
+        /* Responsividade para Celular */
+        @media (max-width: 480px) {
+            .wrapper {
+                height: 300px;
+            }
+
+            .envelope {
+                height: 200px;
+            }
+
+            .envelope.open {
+                transform: translateY(150px) scale(0.9);
+            }
+
+            .letter-container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-size: 0.95rem;
+                margin-bottom: 15px;
+            }
+
+            .signature {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .flower-btn img {
+                width: 60px;
             }
         }
     </style>
