@@ -74,28 +74,18 @@ body {
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
-  background-image: radial-gradient(ellipse at top,
-      transparent 0%,
-      var(--dark-color)),
-    radial-gradient(ellipse at bottom,
-      var(--dark-color),
-      rgba(145, 233, 255, 0.2)),
-    repeating-linear-gradient(220deg,
-      rgb(0, 0, 0) 0px,
-      rgb(0, 0, 0) 19px,
-      transparent 19px,
-      transparent 22px),
-    repeating-linear-gradient(189deg,
-      rgb(0, 0, 0) 0px,
-      rgb(0, 0, 0) 19px,
-      transparent 19px,
-      transparent 22px),
-    repeating-linear-gradient(148deg,
-      rgb(0, 0, 0) 0px,
-      rgb(0, 0, 0) 19px,
-      transparent 19px,
-      transparent 22px),
-    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
+  background-color: #0b1021;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 35% 80%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 65% 10%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+    radial-gradient(circle at 45% 40%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 75% 60%, rgba(255, 255, 255, 0.8) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+    radial-gradient(circle at 90% 85%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 5% 90%, rgba(255, 255, 255, 0.8) 1.5px, transparent 1.5px),
+    radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
 .flowers {
@@ -260,8 +250,8 @@ body {
   transform: translate(-50%, -100%);
   width: 8vmin;
   height: 8vmin;
-  background-color: #d000eb;
-  /* background-color: #fd2525; */
+  background-color: #ffb6c1;
+  /* rosa bebê central */
   filter: blur(10vmin);
 }
 
@@ -272,8 +262,8 @@ body {
   width: 8vmin;
   height: 11vmin;
   border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-  background-color: #990eb1;
-  background-color: #d000eb;
+  background-color: #add8e6;
+  /* azul bebê */
   transform-origin: bottom center;
   opacity: 0.9;
   box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
@@ -297,7 +287,8 @@ body {
   transform-origin: bottom left;
   border-radius: 4vmin 10vmin 4vmin 4vmin;
   transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-  background-color: #6e0078;
+  background-color: #ffc0cb;
+  /* rosa */
   z-index: 1;
   opacity: 0.8;
 }
@@ -321,81 +312,7 @@ body {
   width: 60%;
   height: 60%;
   border-radius: inherit;
-  background-image: repeating-linear-gradient(135deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(45deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(67.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(135deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(45deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(112.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(112.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(45deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(22.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(45deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(22.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(135deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(157.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(67.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
-    repeating-linear-gradient(67.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px),
+  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0px, rgba(0, 0, 0, 0.05) 1px, transparent 1px, transparent 12px),
     linear-gradient(90deg, rgb(15, 0, 81), rgb(64, 0, 255));
 }
 
@@ -468,7 +385,8 @@ body {
   bottom: 0vmin;
   width: 1vmin;
   height: 1vmin;
-  background-color: rgb(229, 104, 227);
+  background-color: #ffb6c1;
+  /* rosa bebê */
   border-radius: 50%;
   filter: blur(0.2vmin);
   -webkit-animation: light-ans 4s linear infinite backwards;
@@ -476,7 +394,8 @@ body {
 }
 
 .flower__light:nth-child(odd) {
-  background-color: #a70199;
+  background-color: #add8e6;
+  /* azul bebê */
 }
 
 .flower__light--1 {
@@ -528,7 +447,7 @@ body {
 }
 
 .flower__grass {
-  --c: #8a00da;
+  --c: #ffc0cb;
   --line-w: 1.5vmin;
   position: absolute;
   bottom: 12vmin;
@@ -776,7 +695,7 @@ body {
   right: 0%;
   width: 100%;
   height: 100%;
-  background-color: rgba(161, 38, 188, 0.6);
+  background-color: rgba(255, 182, 193, 0.6);
   filter: blur(1.5vmin);
   z-index: 100;
 }
@@ -784,7 +703,7 @@ body {
 .flower__g-long {
   --w: 2vmin;
   --h: 6vmin;
-  --c: #8a00da;
+  --c: #ffc0cb;
   position: absolute;
   bottom: 10vmin;
   left: -3vmin;
@@ -852,12 +771,12 @@ body {
   width: 30vmin;
   height: 50vmin;
   border-top-left-radius: 100%;
-  border-left: 2vmin solid #9e12ef;
+  border-left: 2vmin solid #ffc0cb;
   background-image: linear-gradient(to bottom,
       transparent,
       var(--dark-color) 60%);
-  -webkit-mask-image: linear-gradient(to top, transparent 30%, #9e12ef 60%);
-  mask-image: linear-gradient(to top, transparent 30%, #9e12ef 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 30%, #ffc0cb 60%);
+  mask-image: linear-gradient(to top, transparent 30%, #ffc0cb 60%);
 }
 
 .flower__g-right--1 {
@@ -1102,13 +1021,13 @@ body {
   background-image: linear-gradient(to bottom left,
       transparent,
       var(--dark-color)),
-    linear-gradient(to bottom right, #8a00da 50%, transparent 50%, transparent);
+    linear-gradient(to bottom right, #add8e6 50%, transparent 50%, transparent);
   -webkit-mask-image: linear-gradient(to bottom right,
-      #8a00da 50%,
+      #add8e6 50%,
       transparent 50%,
       transparent);
   mask-image: linear-gradient(to bottom right,
-      #8a00da 50%,
+      #add8e6 50%,
       transparent 50%,
       transparent);
 }
@@ -1151,9 +1070,9 @@ body {
   width: 30vmin;
   height: 50vmin;
   border-top-left-radius: 100%;
-  border-left: 2vmin solid #9e12ef;
-  -webkit-mask-image: linear-gradient(to top, transparent 25%, #9e12ef 50%);
-  mask-image: linear-gradient(to top, transparent 25%, #9e12ef 50%);
+  border-left: 2vmin solid #ffc0cb;
+  -webkit-mask-image: linear-gradient(to top, transparent 25%, #ffc0cb 50%);
+  mask-image: linear-gradient(to top, transparent 25%, #ffc0cb 50%);
   position: relative;
   z-index: 1;
 }
@@ -1165,17 +1084,17 @@ body {
   width: 10vmin;
   height: 10vmin;
   border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
-  box-shadow: inset 0 2px 1vmin hsla(272, 87%, 44%, 0.2);
+  box-shadow: inset 0 2px 1vmin hsla(350, 100%, 88%, 0.2);
   background-image: linear-gradient(to bottom left,
       transparent,
       var(--dark-color) 98%),
-    linear-gradient(to bottom right, #d000eb 45%, transparent 50%, transparent);
+    linear-gradient(to bottom right, #ffc0cb 45%, transparent 50%, transparent);
   -webkit-mask-image: linear-gradient(135deg,
-      #d000eb 40%,
+      #ffc0cb 40%,
       transparent 50%,
       transparent);
   mask-image: linear-gradient(135deg,
-      #d000eb 40%,
+      #ffc0cb 40%,
       transparent 50%,
       transparent);
 }
@@ -1328,10 +1247,10 @@ body {
 .long-g--1 .leaf {
   -webkit-mask-image: linear-gradient(to top,
       transparent 40%,
-      #d000eb 80%) !important;
+      #ffb6c1 80%) !important;
   mask-image: linear-gradient(to top,
       transparent 40%,
-      #d000eb 80%) !important;
+      #ffb6c1 80%) !important;
 }
 
 .long-g--1 .leaf--1 {
@@ -1353,10 +1272,10 @@ body {
 .long-g--3 .leaf {
   -webkit-mask-image: linear-gradient(to top,
       transparent 50%,
-      #d000eb 80%) !important;
+      #ffb6c1 80%) !important;
   mask-image: linear-gradient(to top,
       transparent 50%,
-      #d000eb 80%) !important;
+      #ffb6c1 80%) !important;
 }
 
 .long-g--2 .leaf--1,
@@ -1373,10 +1292,10 @@ body {
 .long-g--3 .leaf {
   -webkit-mask-image: linear-gradient(to top,
       transparent 40%,
-      #d000eb 80%) !important;
+      #ffb6c1 80%) !important;
   mask-image: linear-gradient(to top,
       transparent 40%,
-      #d000eb 80%) !important;
+      #ffb6c1 80%) !important;
 }
 
 .long-g--4 {
@@ -1389,10 +1308,10 @@ body {
 .long-g--4 .leaf {
   -webkit-mask-image: linear-gradient(to top,
       transparent 50%,
-      #d000eb 80%) !important;
+      #ffb6c1 80%) !important;
   mask-image: linear-gradient(to top,
       transparent 50%,
-      #d000eb 80%) !important;
+      #ffb6c1 80%) !important;
 }
 
 .long-g--5 {
@@ -1928,5 +1847,32 @@ h1 {
   100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(255, 94, 120, 0);
+  }
+}
+
+/* --- ESTILO DAS IMAGENS CAINDO --- */
+.falling-image {
+  position: absolute;
+  top: -50px;
+  /* Start slightly above the screen */
+  z-index: 0;
+  pointer-events: none;
+  /* Ignore mouse clicks */
+  animation-name: fallAndSway;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fallAndSway {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(55vh) rotate(180deg) translateX(20px);
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg) translateX(-20px);
   }
 }

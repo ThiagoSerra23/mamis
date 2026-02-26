@@ -4,239 +4,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Ana ✨</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap"
-        rel="stylesheet">
+    <title>Para minha Web Mãe ❤️</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(180deg, #4a195b 0%, #1a0b2e 100%);
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
-
-        /* Decorative background elements */
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: 0;
-            animation: orbFloat 10s infinite alternate;
-        }
-
-        .orb-1 {
-            width: 300px;
-            height: 300px;
-            background: #7b2cbf;
-            top: -50px;
-            left: -50px;
-        }
-
-        .orb-2 {
-            width: 200px;
-            height: 200px;
-            background: #ff006e;
-            bottom: 50px;
-            right: 50px;
-            animation-delay: 2s;
-        }
-
-        .orb-3 {
-            width: 150px;
-            height: 150px;
-            background: #3a86ff;
-            bottom: -20px;
-            left: 30%;
-            animation-delay: 4s;
-        }
-
-        @keyframes orbFloat {
-            from {
-                transform: translate(0, 0);
-            }
-
-            to {
-                transform: translate(20px, 40px);
-            }
-        }
-
-        .container {
-            z-index: 10;
-            text-align: center;
-            width: 100%;
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        h1 {
+            background-color: #ffe4e1;
+            /* Rosa bebê suave */
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 40px;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            letter-spacing: 1px;
-            font-weight: 700;
+            overflow: hidden;
+            perspective: 1000px;
         }
 
-        .cards {
+        /* Container principal */
+        .wrapper {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            height: 350px;
             display: flex;
             justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 40px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            color: white;
-            width: 320px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            font-weight: 300;
-        }
-
-        .icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 20px;
-                justify-content: center;
-                overflow-y: auto;
-            }
-
-            .container {
-                padding: 0;
-            }
-
-            h1 {
-                font-size: 2.8rem;
-                margin-bottom: 30px;
-            }
-
-            .cards {
-                gap: 20px;
-                width: 100%;
-            }
-
-            .card {
-                width: 100%;
-                padding: 35px 20px;
-                border-radius: 30px;
-            }
-
-            .icon {
-                font-size: 3rem;
-                margin-bottom: 15px;
-            }
-
-            .card h2 {
-                font-size: 1.5rem;
-                margin-top: 5px;
-            }
-
-            .card p {
-                font-size: 1rem;
-                max-width: 80%;
-                margin: 0 auto;
-            }
-        }
-
-        /* Star Background */
-        #stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: transparent;
-        }
-
-        .star {
+        /* O Envelope Fechado */
+        .envelope {
             position: absolute;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: twinkle var(--duration) infinite ease-in-out;
+            width: 100%;
+            height: 250px;
+            background: #fffafa;
+            /* Branco suave estilo papel */
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 20;
+            transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+            cursor: pointer;
+            border: 2px solid rgba(255, 182, 193, 0.4);
         }
 
-        @keyframes twinkle {
+        .envelope:hover {
+            transform: scale(1.02);
+        }
 
-            0%,
-            100% {
-                opacity: 0.3;
+        .envelope.open {
+            transform: translateY(200px) scale(0.9);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Detalhes do Envelope (Abas e Laço) */
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 50%;
+            background: #fff5f5;
+            border-radius: 12px 12px 0 0;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            z-index: 21;
+        }
+
+        .ribbon-closed {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 30px;
+            background: #ffb6c1;
+            /* rosa bebê */
+            z-index: 22;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .bow-closed {
+            width: 60px;
+            height: 30px;
+            background: transparent;
+            border: 6px solid #ffb6c1;
+            border-radius: 30px;
+            position: relative;
+            background-color: #fff;
+            animation: pulseBow 1.5s infinite;
+        }
+
+        .bow-closed::before,
+        .bow-closed::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            width: 20px;
+            height: 30px;
+            background: transparent;
+            border: 4px solid #ffb6c1;
+            border-radius: 10px;
+            border-top: none;
+        }
+
+        .bow-closed::before {
+            left: 5px;
+            transform: rotate(20deg);
+        }
+
+        .bow-closed::after {
+            right: 5px;
+            transform: rotate(-20deg);
+        }
+
+        .click-text {
+            position: absolute;
+            bottom: 20px;
+            color: #ffb6c1;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            animation: pulseBow 1.5s infinite;
+            z-index: 23;
+        }
+
+        @keyframes pulseBow {
+            0% {
                 transform: scale(1);
             }
 
             50% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-        }
-
-        /* Floating Hearts */
-        .heart-particle {
-            position: fixed;
-            bottom: -50px;
-            color: rgba(255, 0, 110, 0.6);
-            font-size: 20px;
-            pointer-events: none;
-            z-index: 1;
-            animation: floatUp var(--duration) linear infinite;
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
+                transform: scale(1.1);
             }
 
             100% {
-                transform: translateY(-110vh) rotate(360deg);
-                opacity: 0;
+                transform: scale(1);
+            }
+        }
+
+        /* A Carta Interna */
+        .letter-container {
+            position: absolute;
+            width: 100%;
+            background: #fcfcfc;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(255, 182, 193, 0.1);
+            text-align: center;
+            z-index: 10;
+            opacity: 0;
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            transition: all 1s ease-in-out;
+            transform: translateY(50px) scale(0.8);
+            pointer-events: none;
+        }
+
+        .letter-container.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+            z-index: 30;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ffb6c1;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            margin-top: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            color: #add8e6;
+            /* azul bebê */
+            font-size: 1.8rem;
+            text-align: right;
+            margin-top: 20px;
+            margin-bottom: 35px;
+        }
+
+        /* Botão com assets/image.png */
+        .flower-btn {
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: none;
+            outline: none;
+            animation: pulse 2s infinite;
+        }
+
+        .flower-btn:hover {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .flower-btn img {
+            width: 70px;
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+        }
+
+        .btn-text {
+            display: block;
+            color: #ffb6c1;
+            font-size: 0.95rem;
+            margin-top: 5px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
             }
         }
     </style>
@@ -244,68 +252,64 @@
 
 <body>
 
-    <div id="stars"></div>
 
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+    <div class="wrapper">
+        <!-- O Envelope Fechado -->
+        <div class="envelope" id="envelope" onclick="openLetter()">
+            <div class="envelope-flap"></div>
+            <div class="ribbon-closed">
+                <div class="bow-closed"></div>
+            </div>
+            <div class="click-text">Clique no laço para abrir ❤️</div>
+        </div>
 
-    <div class="container">
-        <h1>Para Ana</h1>
-        <div class="cards">
-            <a href="flower.html" class="card">
-                <div class="icon">🌸</div>
-                <h2>O Jardim</h2>
-                <p>Singelas e coloridas, flores para alegrar o dia.</p>
-            </a>
+        <!-- A Carta Que se Revela -->
+        <div class="letter-container" id="letter">
+            <h1>Para Minha Web Mãe</h1>
 
-            <a href="galaxia.html" class="card">
-                <div class="icon">✨</div>
-                <h2>O Universo</h2>
-                <p>Uma imensidão de estrelas brilhando por você.</p>
-            </a>
+            <p>
+                Mãe, não importa a distância que as telas colocam entre nós, o seu afeto e colo materno transbordam e
+                sempre
+                me alcançam.
+                Venho aqui para te lembrar do quão especial você é! 💖
+            </p>
+            <p>
+                Você é uma mulher admirável, forte, batalhadora e cheia de luz própria.
+                A sua essência feminina e o seu cuidado me abraçam e fazem dos meus dias algo muito mais feliz.
+            </p>
+            <p>
+                Obrigado por me acolher com tanto carinho recente. Eu te valorizo muito como mulher e como essa mãe tão
+                incrível que você decidiu ser para mim.
+            </p>
+
+            <div class="signature">Com amor! Th</div>
+
+            <button class="flower-btn" onclick="goToFlower()">
+                <img src="assets/image.png" alt="Presente fofo">
+                <span class="btn-text">Clique e abra a surpresa 🌸</span>
+            </button>
         </div>
     </div>
 
     <script>
-        // Star creation
-        const starsContainer = document.getElementById('stars');
-        const starCount = 150;
+        function openLetter() {
 
-        for (let i = 0; i < starCount; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            const size = Math.random() * 3 + 1;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
-            star.style.animationDelay = `${Math.random() * 5}s`;
-            starsContainer.appendChild(star);
-        }
+            // Animação do envelope abrindo e sumindo
+            const envelope = document.getElementById('envelope');
+            envelope.classList.add('open');
 
-        // Heart creation
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'heart-particle';
-            heart.innerHTML = '❤️';
-            heart.style.left = `${Math.random() * 100}%`;
-            const size = Math.random() * 20 + 10;
-            heart.style.fontSize = `${size}px`;
-            heart.style.setProperty('--duration', `${Math.random() * 5 + 5}s`);
-            heart.style.opacity = Math.random();
-
-            document.body.appendChild(heart);
-
+            // Revela a carta
+            const letter = document.getElementById('letter');
             setTimeout(() => {
-                heart.remove();
-            }, 10000);
+                letter.classList.add('show');
+            }, 600); // pequeno atraso para deixar o envelope cair um pouco primeiro
         }
 
-        setInterval(createHeart, 300);
+        function goToFlower() {
+            // Guarda no localStorage que a música já deveria estar tocando para talvez manter tocando na prox tela se configurado
+            window.location.href = 'flower.html';
+        }
     </script>
-
 </body>
 
 </html>

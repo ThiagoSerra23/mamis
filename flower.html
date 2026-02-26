@@ -32,14 +32,13 @@
       }
     }
 
-    /* Força a GPU a processar as flores para não travar a CPU */
+    /* Removemos o 'will-change' excessivo pois ele criava muitas camadas de composição
+       e causava travamento em dispositivos móveis. */
     .flower,
     .flower__leaf,
     .growing-grass,
     .grow-ans {
-      will-change: transform, opacity;
       transform-style: preserve-3d;
-      backface-visibility: hidden;
     }
 
     /* --- ESTILO DO BOTÃO VOLTAR --- */
@@ -91,7 +90,7 @@
     &#8592; Voltar
   </a>
 
-  <audio src="assets\flor.mp3" autoplay></audio>
+  <audio src="assets\Obrigado mãe Pt2 - Dfideliz.mp3" autoplay></audio>
   <div id="lyrics"></div>
 
   <h1 class="titulo">.</h1>
@@ -391,19 +390,7 @@
 
     </div>
   </div>
-  <div id="love-note-container">
-    <button id="toggle-note">❤️</button>
-    <div id="love-note">
-      <p>
-        Ana,<br><br>
-        Cada flor dessa página representa um pouco do encanto que você transmite.
-        Obrigado por deixar os dias mais coloridos com sua presença.
-        Que este gesto simples mostre o quanto você é especial. 🌸<br><br>
-        Com carinho,<br>
-        Thiago
-      </p>
-    </div>
-  </div>
+
 
   <script src="js\anim.js"></script>
   <script src="js\main.js"></script>
