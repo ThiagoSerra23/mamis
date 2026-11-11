@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,32 +9,56 @@
   <title>Mamis — Uma jornada feita com amor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/experience/cinematic.css">
   <script src="js/experience/cinematic.js" defer></script>
 </head>
+
 <body>
   <main class="journey" id="journey">
     <div class="ambient ambient--one" aria-hidden="true"></div>
     <div class="ambient ambient--two" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
 
-    <section class="scene scene--hero scene--character is-active" id="scene-hero" aria-labelledby="hero-title">
-      <!-- A arte contém a composição cinematográfica; os controles reais continuam acessíveis. -->
-      <img
-        class="hero-artwork"
-        src="assets/images/hero/mamis-character.webp"
-        alt="Personagem de cabelo loiro e roupas rosas em uma floresta fantástica iluminada por uma lua violeta."
-        fetchpriority="high"
-        decoding="async"
-      >
+    <section class="scene scene--hero is-active" id="scene-hero" aria-labelledby="hero-title">
+      <div class="sky" aria-hidden="true"><span class="moon"></span><span class="moon-halo"></span></div>
+      <div class="forest forest--far" aria-hidden="true"></div>
+      <div class="forest forest--mid" aria-hidden="true"></div>
+      <div class="forest forest--near" aria-hidden="true"></div>
+      <div class="mist mist--one" aria-hidden="true"></div>
+      <div class="mist mist--two" aria-hidden="true"></div>
       <canvas class="fireflies" id="fireflies" aria-hidden="true"></canvas>
-      <h1 class="sr-only" id="hero-title">Mamis — Você é o meu maior capítulo, minha eterna inspiração.</h1>
-      <button class="hero-continue" type="button" data-next="story" aria-label="Continuar para a jornada">
-        <span class="sr-only">Continuar</span>
-      </button>
-      <p class="hero-mobile-caption" aria-hidden="true">Você é o meu maior capítulo,<br>minha eterna inspiração.</p>
-      <div class="hero-scroll" aria-hidden="true"><span></span> ROLE PARA EXPLORAR</div>
+
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> UMA HOMENAGEM FEITA COM CARINHO <span></span></p>
+
+        <h1 id="hero-title">
+          De CoisaRuim,<br>
+          <em>para Loba Fell.</em>
+        </h1>
+
+        <p class="lead">
+          Porque algumas pessoas merecem mais do que palavras.
+          Merecem uma história inteira dedicada a elas.
+        </p>
+
+        <button class="button button--primary" data-next="story">
+          Começar a jornada
+          <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+
+      <div class="character-stage">
+        <div class="character-aura" aria-hidden="true"></div>
+        <div class="character-halo character-halo--one" aria-hidden="true"></div>
+        <div class="character-halo character-halo--two" aria-hidden="true"></div>
+        <img class="hero-character" src="assets/images/hero/mamis-character.webp"
+          alt="Personagem dela, com cabelos loiros, roupas rosas e tatuagens." fetchpriority="high" decoding="async">
+        <span class="character-caption">A PERSONAGEM PRINCIPAL DESTA HISTÓRIA</span>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><span></span> UMA HISTÓRIA ESPECIAL</div>
     </section>
 
     <section class="scene scene--story" id="scene-story" aria-labelledby="story-title" hidden>
@@ -41,55 +66,195 @@
       <div class="story-layout">
         <div class="story-mark reveal"><span class="mark-line"></span><span>01 / A JORNADA</span></div>
         <div class="story-copy reveal">
-          <p class="eyebrow">HÁ HISTÓRIAS QUE MERECEM SER CONTADAS</p>
-          <h2 id="story-title">Força também<br>é <em>cuidar.</em></h2>
-          <p>Na imensidão da floresta, existem seres que carregam uma força especial. Não apenas pela coragem, mas pela capacidade de proteger, cuidar e deixar marcas por onde passam.</p>
-          <p>Esta jornada é dedicada a alguém muito especial. Alguém cuja presença transforma os dias comuns em lembranças que ficam para sempre.</p>
-          <button class="button button--ghost" data-next="stars">Seguir as estrelas <span aria-hidden="true">→</span></button>
+          <p class="eyebrow">01 / ONDE TUDO COMEÇOU</p>
+          <h2 id="story-title">
+            Era só um jogo.
+            <span class="story-title-ending">Virou <em>família.</em></span>
+          </h2>
+          <p>A gente se conheceu na Marezap, sem imaginar que aquele primeiro encontro daria início a uma amizade que,
+            com o tempo, conquistaria um espaço tão grande na minha vida. No começo, era só para ter um lugar onde ficar
+            depois do fim da Russa, mas aí vieram as resenhas, as tretas e, principalmente, as muitas e muitas risadas
+            que você arrancou de mim.</p>
+          <p>E, no meio de tudo isso, você acabou se tornando muito mais do que uma companhia para as resenhas. Quando
+            eu me sentia sozinho, você aparecia. Nunca me deixava de lado. Mesmo sem perceber, foi transformando aquele
+            mundo virtual em um cantinho onde eu me sentia acolhido, acompanhado e, acima de tudo, menos sozinho. Acho
+            que foi assim, nos pequenos momentos, que você começou a conquistar um espaço tão especial na minha vida.
+          </p>
+          <button class="button button--ghost" data-next="chapter">Tem mais da nossa história <span
+              aria-hidden="true">→</span></button>
         </div>
-        <div class="story-art reveal" aria-hidden="true"><div class="story-ring"></div><div class="story-ring story-ring--inner"></div><div class="story-star">✦</div><span class="story-coordinate">23° 33' S<br>46° 38' W</span></div>
+        <div class="story-art reveal" aria-hidden="true">
+          <div class="story-ring"></div>
+          <div class="story-ring story-ring--inner"></div>
+          <div class="story-star">✦</div><span class="story-coordinate">23° 33' S<br>46° 38' W</span>
+        </div>
       </div>
     </section>
 
-    <section class="scene scene--stars" id="scene-stars" aria-labelledby="stars-title" hidden>
-      <div class="starfield" aria-hidden="true"></div>
-      <div class="stars-heading reveal"><p class="eyebrow">02 / PEQUENAS VERDADES</p><h2 id="stars-title">Cinco estrelas.<br><em>Infinitos motivos.</em></h2><p>Toque em cada estrela e descubra uma mensagem.</p></div>
-      <div class="constellation" id="constellation">
-        <svg class="star-lines" viewBox="0 0 600 380" preserveAspectRatio="none" aria-hidden="true"><path d="M95 110 L245 55 L420 125 L500 275 L265 325 L95 110"></path></svg>
-        <button class="star-node star-node--1" data-star="0" aria-label="Mensagem 1" aria-pressed="false"><span>✦</span></button>
-        <button class="star-node star-node--2" data-star="1" aria-label="Mensagem 2" aria-pressed="false"><span>✦</span></button>
-        <button class="star-node star-node--3" data-star="2" aria-label="Mensagem 3" aria-pressed="false"><span>✦</span></button>
-        <button class="star-node star-node--4" data-star="3" aria-label="Mensagem 4" aria-pressed="false"><span>✦</span></button>
-        <button class="star-node star-node--5" data-star="4" aria-label="Mensagem 5" aria-pressed="false"><span>✦</span></button>
+    <section class="scene scene--chapter" id="scene-chapter" aria-labelledby="chapter-title" hidden>
+      <div class="chapter-glow" aria-hidden="true"></div>
+      <div class="chapter-layout">
+        <div class="chapter-heading reveal">
+          <p class="eyebrow">02 / QUANDO O JOGO VIROU VIDA</p>
+          <h2 id="chapter-title">Eu gostava de estar perto.<br><em>Você se tornou parte da minha vida.</em></h2>
+          <p class="chapter-intro">E acho que foi assim, sem a gente perceber, que nossa história ficou tão especial.
+          </p>
+        </div>
+
+        <div class="chapter-timeline">
+          <article class="chapter-moment reveal">
+            <span class="chapter-number">01</span>
+            <div>
+              <h3>Eu sempre dava um jeito de aparecer</h3>
+              <p>Por onde você ia nas cidades, eu acabava indo também. Não era por obrigação, muito menos por acaso. Eu
+                gostava mesmo era de ficar perto de você, participar das resenhas e aproveitar mais um pouco da sua
+                companhia.</p>
+            </div>
+          </article>
+
+          <article class="chapter-moment reveal">
+            <span class="chapter-number">02</span>
+            <div>
+              <h3>A chefinha que não abaixa a cabeça</h3>
+              <p>Você nunca foi de aceitar que alguém falasse mais alto só por ser homem. Se chegassem querendo meter
+                bronca, você respondia à altura. Esse seu jeito firme sempre me fez rir e, ao mesmo tempo, admirar ainda
+                mais você.</p>
+            </div>
+          </article>
+
+          <article class="chapter-moment reveal">
+            <span class="chapter-number">03</span>
+            <div>
+              <h3>Eu também fazia questão de cuidar de você</h3>
+              <p>Quando alguém aparecia na israel querendo arrumar confusão, eu chegava para ficar do seu lado. Eu
+                gostava de te proteger e de mostrar que você não estava sozinha. No RP, eu era seu segurança particular
+                — e olha que trabalho não faltava, KKKK.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="chapter-ending reveal">
+          <span aria-hidden="true">♡</span>
+          <p>Não foi uma única lembrança que fez você se tornar minha mãe. Foram todos esses pequenos momentos, juntos.
+          </p>
+        </div>
+
+        <button class="button button--ghost chapter-next" data-next="care">Tem uma parte importante que vem depois <span
+            aria-hidden="true">→</span></button>
       </div>
-      <div class="message-panel" id="message-panel" role="status" aria-live="polite"><span class="message-index">UMA MENSAGEM PARA VOCÊ</span><p id="star-message">Escolha uma estrela para revelar sua mensagem.</p></div>
-      <div class="stars-footer"><span id="star-progress">0 DE 5 DESCOBERTAS</span><button class="button button--ghost" id="stars-next" disabled>Continuar <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section class="scene scene--care" id="scene-care" aria-labelledby="care-title" hidden>
+      <div class="care-backdrop" aria-hidden="true"><span class="care-orbit care-orbit--one"></span><span
+          class="care-orbit care-orbit--two"></span><span class="care-heart">♡</span></div>
+      <div class="care-content reveal">
+        <p class="eyebrow">03 / QUANDO VOCÊ VIROU MINHA MÃE</p>
+        <h2 id="care-title">Foi além da cidade.<br><em>Foi além do jogo.</em></h2>
+        <p>Eu já gostava de estar com você no RP. Já fazia questão de aparecer onde você estivesse e de ficar do seu
+          lado. Mas teve uma coisa que mudou tudo: você começou a se preocupar comigo fora dali.</p>
+        <p>Você percebia quando eu não estava bem, mesmo quando eu não dizia nada. Ia atrás de mim, perguntava,
+          demonstrava que se importava. E foi nesse cuidado, tão seu, que eu entendi que o que a gente tinha não era só
+          uma amizade de jogo.</p>
+        <p class="care-emphasis">Eu te chamava de mãe porque, de alguma forma, você já tinha se tornado uma.</p>
+        <button class="button button--ghost" data-next="memories">Quero te contar o que admiro em você <span
+            aria-hidden="true">→</span></button>
+      </div>
     </section>
 
     <section class="scene scene--memories" id="scene-memories" aria-labelledby="memories-title" hidden>
       <div class="memories-backdrop" aria-hidden="true"></div>
-      <div class="memories-heading reveal"><p class="eyebrow">03 / O QUE FICA</p><h2 id="memories-title">Memórias que<br><em>moram no coração.</em></h2><p>Todo momento especial merece um lugar para continuar vivo.</p></div>
-      <div class="memory-grid reveal">
-        <div class="memory-frame"><div class="memory-placeholder"><span>01</span><b>Um momento</b><small>Uma lembrança para guardar</small></div></div>
-        <div class="memory-frame memory-frame--featured"><div class="memory-placeholder"><span>02</span><b>Um sorriso</b><small>Daqueles que iluminam tudo</small></div></div>
-        <div class="memory-frame"><div class="memory-placeholder"><span>03</span><b>Uma história</b><small>Que merece ser lembrada</small></div></div>
+      <div class="memories-heading reveal">
+        <p class="eyebrow">04 / O QUE EU ADMIRO EM VOCÊ</p>
+        <h2 id="memories-title">Tem tanta coisa<br><em>que faz você ser única.</em></h2>
+        <p>E talvez eu não fale isso tanto quanto deveria.</p>
       </div>
-      <p class="memory-note">ESPAÇO RESERVADO PARA FOTOS DE VOCÊS</p>
-      <button class="button button--ghost" data-next="hug">Tem mais uma coisa <span aria-hidden="true">→</span></button>
+      <div class="memory-grid reveal">
+        <article class="memory-frame">
+          <div class="memory-placeholder"><span>01</span><b>Sua força</b><small>Você não abaixa a cabeça para ninguém.
+              Tem personalidade, sabe se posicionar e não deixa ninguém te diminuir. Eu admiro muito isso em
+              você.</small></div>
+        </article>
+        <article class="memory-frame memory-frame--featured">
+          <div class="memory-placeholder"><span>02</span><b>Seu cuidado</b><small>Você percebe quando alguma coisa não
+              está bem comigo, até quando fico quieto. Seu jeito de cuidar faz diferença, mesmo quando talvez você nem
+              imagine.</small></div>
+        </article>
+        <article class="memory-frame">
+          <div class="memory-placeholder"><span>03</span><b>Meu jeito de demonstrar</b><small>Eu sou fechado e nem
+              sempre sei colocar o que sinto em palavras. Mas estar por perto, te apoiar e ficar do seu lado também é
+              uma forma de dizer que você é importante pra mim.</small></div>
+        </article>
+      </div>
+      <p class="memory-note">TALVEZ EU NÃO DIGA SEMPRE, MAS EU VEJO E ADMIRO TUDO ISSO.</p>
+      <button class="button button--ghost" data-next="hug">Agora deixa eu te agradecer <span
+          aria-hidden="true">→</span></button>
     </section>
 
+
     <section class="scene scene--hug" id="scene-hug" aria-labelledby="hug-title" hidden>
-      <div class="hug-light" aria-hidden="true"></div><div class="hug-particles" aria-hidden="true"></div>
-      <div class="hug-content reveal"><span class="hug-symbol">♡</span><p class="eyebrow">04 / UM GESTO SIMPLES</p><h2 id="hug-title">Se eu pudesse,<br>te daria um abraço<br><em>agora.</em></h2><p>Às vezes, um abraço consegue dizer tudo aquilo que as palavras não conseguem.</p><button class="button button--primary" id="hug-button">Receber um abraço <span aria-hidden="true">♡</span></button><p class="hug-after" id="hug-after" hidden>Sinta todo o carinho que existe neste gesto. Você é muito especial. ♡</p></div>
+      <div class="hug-light" aria-hidden="true"></div>
+      <div class="hug-particles" aria-hidden="true"></div>
+
+      <div class="hug-content reveal" style="max-width: 750px; width: 100%; margin: auto;">
+
+        <span class="hug-symbol" style="font-size: 2.5rem; margin-bottom: 8px;">♡</span>
+
+        <p class="eyebrow">05 / O QUE EU QUERO QUE VOCÊ SAIBA</p>
+
+        <h2 id="hug-title" style="
+      font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+      line-height: 0.98;
+      margin: 12px 0 20px;
+      letter-spacing: -0.04em;
+    ">
+          Você é minha mãe,<br>
+          minha amiga e minha<br>
+          <em>chefinha.</em>
+        </h2>
+
+        <p style="
+      max-width: 520px;
+      margin: 0 auto 18px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    ">
+          Ter você nesses três lugares é um dos maiores presentes que esse jogo me deu.
+          Obrigado por confiar em mim, me apoiar e também cuidar de mim fora da cidade.
+        </p>
+
+        <button class="button button--primary" id="hug-button">
+          Tem um abraço aqui pra você <span aria-hidden="true">♡</span>
+        </button>
+
+        <p class="hug-after" id="hug-after" hidden>
+          Considera esse abraço entregue, mãe. Com todo o carinho que às vezes
+          eu não consigo colocar em palavras. ♡
+        </p>
+
+      </div>
     </section>
+
 
     <section class="scene scene--final" id="scene-final" aria-labelledby="final-title" hidden>
       <div class="final-glow" aria-hidden="true"></div>
-      <div class="final-content reveal"><p class="eyebrow">05 / COM TODO O MEU AMOR</p><div class="final-flower" aria-hidden="true">✿</div><h2 id="final-title">O melhor ainda<br>está <em>por vir.</em></h2><p>Esta jornada termina aqui, mas o carinho que inspirou cada detalhe continua. Preparei uma última surpresa para você.</p><a class="button button--primary" href="flower.html">Descobrir minha surpresa <span aria-hidden="true">↗</span></a><span class="signature">FEITO COM AMOR, PARA SEMPRE.</span></div>
+      <div class="final-content reveal">
+        <p class="eyebrow">06 / UMA CARTA, MÃE</p>
+        <div class="final-flower" aria-hidden="true">♡</div>
+        <h2 id="final-title">Talvez eu não saiba<br>demonstrar muito bem,<br><em>mas...</em></h2>
+        <p>nunca duvide do quanto você é especial para mim. Obrigado por ser essa mulher de personalidade forte, que não
+          abaixa a cabeça pra ninguém, por acreditar em mim e por estar do meu lado. Eu posso ser fechado e meio ruim
+          pra demonstrar sentimento, mas sou muito grato por ter você na minha vida. Te amo, mãe.</p><a
+          class="button button--primary" href="flower.html">Tenho mais uma coisa pra você <span
+            aria-hidden="true">↗</span></a><span class="signature">FEITO COM CARINHO, DO SEU FILHO CoisaRuim.</span>
+      </div>
     </section>
 
-    <nav class="scene-nav" aria-label="Navegação da jornada"><span class="nav-brand">M<span>✦</span></span><div class="nav-progress"><span id="progress-bar"></span></div><span class="nav-count" id="scene-count">01 — 06</span></nav>
+    <nav class="scene-nav" aria-label="Navegação da jornada"><span class="nav-brand">M<span>✦</span></span>
+      <div class="nav-progress"><span id="progress-bar"></span></div><span class="nav-count" id="scene-count">01 —
+        07</span>
+    </nav>
     <div class="message-toast" id="message-toast" role="status" aria-live="polite"></div>
   </main>
 </body>
+
 </html>
