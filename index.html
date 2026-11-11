@@ -2,337 +2,94 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Uma experiência especial preparada com carinho.">
-  <title>Uma Jornada Especial</title>
-
-  <!-- Google Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10091d">
+  <meta name="description" content="Uma jornada especial preparada com carinho.">
+  <title>Mamis — Uma jornada feita com amor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-
-  <!-- Experience Stylesheets -->
-  <link rel="stylesheet" href="css/experience/variables.css">
-  <link rel="stylesheet" href="css/experience/base.css">
-  <link rel="stylesheet" href="css/experience/forest.css">
-  <link rel="stylesheet" href="css/experience/wolf.css">
-  <link rel="stylesheet" href="css/experience/story.css">
-  <link rel="stylesheet" href="css/experience/constellation.css">
-  <link rel="stylesheet" href="css/experience/memories.css">
-  <link rel="stylesheet" href="css/experience/hug.css">
-  <link rel="stylesheet" href="css/experience/transitions.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/experience/cinematic.css">
+  <script src="js/experience/cinematic.js" defer></script>
 </head>
 <body>
+  <main class="journey" id="journey">
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
-  <div class="wolf-experience" id="wolf-app">
-
-    <!-- =============================================
-         SECTION 1 — Forest Entrance
-         ============================================= -->
-    <section class="wolf-section" id="scene-entrance">
-      <!-- Particle Canvas -->
-      <canvas id="particles-canvas" class="wolf-canvas-bg"></canvas>
-
-      <!-- Forest Background Layers -->
-      <div class="forest-bg">
-        <!-- Moon -->
-        <div class="forest-moon">
-          <div class="forest-moon__glow"></div>
-          <div class="forest-moon__body"></div>
-        </div>
-
-        <!-- Trees – Back layer -->
-        <div class="forest-trees forest-trees--back">
-          <div class="forest-tree forest-tree--1"></div>
-          <div class="forest-tree forest-tree--2"></div>
-          <div class="forest-tree forest-tree--3"></div>
-          <div class="forest-tree forest-tree--4"></div>
-          <div class="forest-tree forest-tree--5"></div>
-        </div>
-
-        <!-- Trees – Mid layer -->
-        <div class="forest-trees forest-trees--mid">
-          <div class="forest-tree forest-tree--6"></div>
-          <div class="forest-tree forest-tree--7"></div>
-          <div class="forest-tree forest-tree--8"></div>
-          <div class="forest-tree forest-tree--9"></div>
-        </div>
-
-        <!-- Trees – Front layer -->
-        <div class="forest-trees forest-trees--front">
-          <div class="forest-tree forest-tree--10"></div>
-          <div class="forest-tree forest-tree--11"></div>
-        </div>
-
-        <!-- Fog layers -->
-        <div class="forest-fog forest-fog--back"></div>
-        <div class="forest-fog forest-fog--front"></div>
-      </div>
-
-      <!-- Wolf Container -->
-      <div class="wolf-container" id="entrance-wolf">
-        <div class="wolf-silhouette">
-          <img src="assets/images/wolf/wolf-silhouette.svg" alt="Lobo Guardião da Floresta" class="wolf-svg-element">
-          <div class="wolf-eyes">
-            <div class="wolf-eye wolf-eye--left"></div>
-            <div class="wolf-eye wolf-eye--right"></div>
-          </div>
-        </div>
-        <div class="wolf-glow-aura"></div>
-      </div>
-
-      <!-- Entrance Text Content -->
-      <div class="entrance-content" id="entrance-content">
-        <h1 class="wolf-title wolf-text-reveal" id="entrance-title"></h1>
-        <p class="wolf-subtitle wolf-text-reveal" id="entrance-subtitle" style="transition-delay: 0.3s;"></p>
-        <button class="wolf-btn wolf-text-reveal" id="btn-enter" style="transition-delay: 0.6s;"></button>
-      </div>
-    </section>
-
-    <!-- =============================================
-         SECTION 2 — Wolf Story
-         ============================================= -->
-    <section class="wolf-section" id="scene-story" style="display: none;">
-      <!-- Forest Background (simplified) -->
-      <div class="forest-bg forest-bg--story">
-        <div class="forest-trees forest-trees--back">
-          <div class="forest-tree forest-tree--1"></div>
-          <div class="forest-tree forest-tree--3"></div>
-          <div class="forest-tree forest-tree--5"></div>
-        </div>
-        <div class="forest-fog forest-fog--back"></div>
-      </div>
-
-      <!-- Story Content -->
-      <div class="story-content" id="story-content">
-        <div class="story-text-container">
-          <p class="wolf-subtitle story-text wolf-text-reveal" id="story-part1"></p>
-        </div>
-        <div class="story-text-container" style="margin-top: var(--space-md);">
-          <p class="wolf-subtitle story-text wolf-text-reveal" id="story-part2" style="transition-delay: 0.5s;"></p>
-        </div>
-        <button class="wolf-btn wolf-text-reveal" id="btn-story-continue" style="transition-delay: 1s; margin-top: var(--space-lg);"></button>
-      </div>
-    </section>
-
-    <!-- =============================================
-         SECTION 3 — Star Constellation Messages
-         ============================================= -->
-    <section class="wolf-section" id="scene-constellation" style="display: none;">
-      <!-- Starfield Canvas -->
-      <canvas id="stars-canvas" class="wolf-canvas-bg"></canvas>
-
-      <!-- Interactive Star Points -->
-      <div class="constellation-container" id="constellation-container">
-        <div class="constellation-star" data-index="0" data-message="" style="top: 20%; left: 30%;">
-          <div class="star-point"></div>
-          <div class="star-glow"></div>
-          <span class="star-label">★</span>
-        </div>
-        <div class="constellation-star" data-index="1" data-message="" style="top: 35%; left: 65%;">
-          <div class="star-point"></div>
-          <div class="star-glow"></div>
-          <span class="star-label">★</span>
-        </div>
-        <div class="constellation-star" data-index="2" data-message="" style="top: 55%; left: 20%;">
-          <div class="star-point"></div>
-          <div class="star-glow"></div>
-          <span class="star-label">★</span>
-        </div>
-        <div class="constellation-star" data-index="3" data-message="" style="top: 50%; left: 75%;">
-          <div class="star-point"></div>
-          <div class="star-glow"></div>
-          <span class="star-label">★</span>
-        </div>
-        <div class="constellation-star" data-index="4" data-message="" style="top: 70%; left: 45%;">
-          <div class="star-point"></div>
-          <div class="star-glow"></div>
-          <span class="star-label">★</span>
-        </div>
-
-        <!-- SVG for constellation lines connecting stars -->
-        <svg class="constellation-lines" id="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line class="constellation-line" x1="30" y1="20" x2="65" y2="35" />
-          <line class="constellation-line" x1="65" y1="35" x2="75" y2="50" />
-          <line class="constellation-line" x1="75" y1="50" x2="45" y2="70" />
-          <line class="constellation-line" x1="45" y1="70" x2="20" y2="55" />
-          <line class="constellation-line" x1="20" y1="55" x2="30" y2="20" />
-        </svg>
-      </div>
-
-      <!-- Message Card Overlay -->
-      <div class="constellation-message-card" id="constellation-message-card">
-        <div class="message-card-inner">
-          <p class="message-card-text" id="constellation-message-text"></p>
-          <button class="message-card-close" id="constellation-message-close">✕</button>
-        </div>
-      </div>
-
-      <!-- Constellation Prompt -->
-      <p class="wolf-subtitle constellation-prompt wolf-fade-in" id="constellation-prompt">
-        Toque em cada estrela para descobrir uma mensagem.
-      </p>
-
-      <!-- Continue Button (appears when all stars visited) -->
-      <button class="wolf-btn constellation-continue wolf-fade-in" id="btn-constellation-continue" style="display: none;">
-        CONTINUAR A JORNADA
+    <section class="scene scene--hero scene--character is-active" id="scene-hero" aria-labelledby="hero-title">
+      <!-- A arte contém a composição cinematográfica; os controles reais continuam acessíveis. -->
+      <img
+        class="hero-artwork"
+        src="assets/images/hero/mamis-character.webp"
+        alt="Personagem de cabelo loiro e roupas rosas em uma floresta fantástica iluminada por uma lua violeta."
+        fetchpriority="high"
+        decoding="async"
+      >
+      <canvas class="fireflies" id="fireflies" aria-hidden="true"></canvas>
+      <h1 class="sr-only" id="hero-title">Mamis — Você é o meu maior capítulo, minha eterna inspiração.</h1>
+      <button class="hero-continue" type="button" data-next="story" aria-label="Continuar para a jornada">
+        <span class="sr-only">Continuar</span>
       </button>
+      <p class="hero-mobile-caption" aria-hidden="true">Você é o meu maior capítulo,<br>minha eterna inspiração.</p>
+      <div class="hero-scroll" aria-hidden="true"><span></span> ROLE PARA EXPLORAR</div>
     </section>
 
-    <!-- =============================================
-         SECTION 4 — Memories / Photo Gallery
-         ============================================= -->
-    <section class="wolf-section" id="scene-memories" style="display: none;">
-      <!-- Subtle Background -->
-      <div class="memories-bg">
-        <div class="memories-particles"></div>
-      </div>
-
-      <!-- Gallery Content -->
-      <div class="memories-content" id="memories-content">
-        <h2 class="wolf-title memories-title wolf-text-reveal">Memórias</h2>
-        <p class="wolf-subtitle memories-subtitle wolf-text-reveal" style="transition-delay: 0.3s;">
-          Um espaço reservado para nossos momentos especiais.
-        </p>
-
-        <!-- Gallery Grid -->
-        <div class="memories-gallery" id="memories-gallery">
-          <div class="memory-card memory-card--placeholder wolf-fade-in" style="transition-delay: 0.4s;">
-            <div class="memory-card-inner">
-              <svg class="memory-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span class="memory-card-label">Foto 1</span>
-            </div>
-          </div>
-          <div class="memory-card memory-card--placeholder wolf-fade-in" style="transition-delay: 0.5s;">
-            <div class="memory-card-inner">
-              <svg class="memory-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span class="memory-card-label">Foto 2</span>
-            </div>
-          </div>
-          <div class="memory-card memory-card--placeholder wolf-fade-in" style="transition-delay: 0.6s;">
-            <div class="memory-card-inner">
-              <svg class="memory-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span class="memory-card-label">Foto 3</span>
-            </div>
-          </div>
-          <div class="memory-card memory-card--placeholder wolf-fade-in" style="transition-delay: 0.7s;">
-            <div class="memory-card-inner">
-              <svg class="memory-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span class="memory-card-label">Foto 4</span>
-            </div>
-          </div>
-          <div class="memory-card memory-card--placeholder wolf-fade-in" style="transition-delay: 0.8s;">
-            <div class="memory-card-inner">
-              <svg class="memory-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span class="memory-card-label">Foto 5</span>
-            </div>
-          </div>
-          <div class="memory-card memory-card--placeholder memory-card--add wolf-fade-in" style="transition-delay: 0.9s;">
-            <div class="memory-card-inner">
-              <span class="memory-card-plus">+</span>
-              <span class="memory-card-label">Adicionar</span>
-            </div>
-          </div>
+    <section class="scene scene--story" id="scene-story" aria-labelledby="story-title" hidden>
+      <div class="scene-orb scene-orb--story" aria-hidden="true"></div>
+      <div class="story-layout">
+        <div class="story-mark reveal"><span class="mark-line"></span><span>01 / A JORNADA</span></div>
+        <div class="story-copy reveal">
+          <p class="eyebrow">HÁ HISTÓRIAS QUE MERECEM SER CONTADAS</p>
+          <h2 id="story-title">Força também<br>é <em>cuidar.</em></h2>
+          <p>Na imensidão da floresta, existem seres que carregam uma força especial. Não apenas pela coragem, mas pela capacidade de proteger, cuidar e deixar marcas por onde passam.</p>
+          <p>Esta jornada é dedicada a alguém muito especial. Alguém cuja presença transforma os dias comuns em lembranças que ficam para sempre.</p>
+          <button class="button button--ghost" data-next="stars">Seguir as estrelas <span aria-hidden="true">→</span></button>
         </div>
-
-        <p class="wolf-subtitle memories-note wolf-text-reveal" style="transition-delay: 1s;">
-          Em breve, fotos reais preencherão este espaço com nossas memórias.
-        </p>
-
-        <button class="wolf-btn wolf-text-reveal" id="btn-memories-continue" style="transition-delay: 1.2s; margin-top: var(--space-lg);">
-          CONTINUAR A JORNADA
-        </button>
+        <div class="story-art reveal" aria-hidden="true"><div class="story-ring"></div><div class="story-ring story-ring--inner"></div><div class="story-star">✦</div><span class="story-coordinate">23° 33' S<br>46° 38' W</span></div>
       </div>
     </section>
 
-    <!-- =============================================
-         SECTION 5 — The Hug Moment
-         ============================================= -->
-    <section class="wolf-section" id="scene-hug" style="display: none;">
-      <!-- Forest Background -->
-      <div class="forest-bg forest-bg--hug">
-        <div class="forest-trees forest-trees--back">
-          <div class="forest-tree forest-tree--1"></div>
-          <div class="forest-tree forest-tree--3"></div>
-          <div class="forest-tree forest-tree--5"></div>
-        </div>
-        <div class="forest-fog forest-fog--back"></div>
-        <div class="forest-fog forest-fog--front"></div>
+    <section class="scene scene--stars" id="scene-stars" aria-labelledby="stars-title" hidden>
+      <div class="starfield" aria-hidden="true"></div>
+      <div class="stars-heading reveal"><p class="eyebrow">02 / PEQUENAS VERDADES</p><h2 id="stars-title">Cinco estrelas.<br><em>Infinitos motivos.</em></h2><p>Toque em cada estrela e descubra uma mensagem.</p></div>
+      <div class="constellation" id="constellation">
+        <svg class="star-lines" viewBox="0 0 600 380" preserveAspectRatio="none" aria-hidden="true"><path d="M95 110 L245 55 L420 125 L500 275 L265 325 L95 110"></path></svg>
+        <button class="star-node star-node--1" data-star="0" aria-label="Mensagem 1" aria-pressed="false"><span>✦</span></button>
+        <button class="star-node star-node--2" data-star="1" aria-label="Mensagem 2" aria-pressed="false"><span>✦</span></button>
+        <button class="star-node star-node--3" data-star="2" aria-label="Mensagem 3" aria-pressed="false"><span>✦</span></button>
+        <button class="star-node star-node--4" data-star="3" aria-label="Mensagem 4" aria-pressed="false"><span>✦</span></button>
+        <button class="star-node star-node--5" data-star="4" aria-label="Mensagem 5" aria-pressed="false"><span>✦</span></button>
       </div>
-
-      <!-- Hug Content -->
-      <div class="hug-content" id="hug-content">
-        <p class="wolf-subtitle hug-message wolf-text-reveal" id="hug-message"></p>
-        <button class="wolf-btn hug-btn wolf-text-reveal" id="btn-hug" style="transition-delay: 0.5s;"></button>
-      </div>
-
-      <!-- Luminous Expansion Animation Container -->
-      <div class="hug-animation-container" id="hug-animation">
-        <div class="hug-glow-circle" id="hug-glow"></div>
-        <div class="hug-particles" id="hug-particles"></div>
-      </div>
-
-      <!-- After-Hug Message -->
-      <div class="hug-after" id="hug-after" style="display: none;">
-        <p class="wolf-subtitle hug-after-message wolf-fade-in" id="hug-after-message"></p>
-        <button class="wolf-btn wolf-fade-in" id="btn-hug-continue" style="margin-top: var(--space-lg);">
-          CONTINUAR A JORNADA
-        </button>
-      </div>
+      <div class="message-panel" id="message-panel" role="status" aria-live="polite"><span class="message-index">UMA MENSAGEM PARA VOCÊ</span><p id="star-message">Escolha uma estrela para revelar sua mensagem.</p></div>
+      <div class="stars-footer"><span id="star-progress">0 DE 5 DESCOBERTAS</span><button class="button button--ghost" id="stars-next" disabled>Continuar <span aria-hidden="true">→</span></button></div>
     </section>
 
-    <!-- =============================================
-         SECTION 6 — The Flower Reveal / Finale
-         ============================================= -->
-    <section class="wolf-section" id="scene-finale" style="display: none;">
-      <!-- Darkening Forest Background -->
-      <div class="forest-bg forest-bg--finale">
-        <div class="forest-trees forest-trees--back">
-          <div class="forest-tree forest-tree--1"></div>
-          <div class="forest-tree forest-tree--3"></div>
-        </div>
-        <div class="forest-fog forest-fog--back"></div>
-        <div class="finale-darkness"></div>
+    <section class="scene scene--memories" id="scene-memories" aria-labelledby="memories-title" hidden>
+      <div class="memories-backdrop" aria-hidden="true"></div>
+      <div class="memories-heading reveal"><p class="eyebrow">03 / O QUE FICA</p><h2 id="memories-title">Memórias que<br><em>moram no coração.</em></h2><p>Todo momento especial merece um lugar para continuar vivo.</p></div>
+      <div class="memory-grid reveal">
+        <div class="memory-frame"><div class="memory-placeholder"><span>01</span><b>Um momento</b><small>Uma lembrança para guardar</small></div></div>
+        <div class="memory-frame memory-frame--featured"><div class="memory-placeholder"><span>02</span><b>Um sorriso</b><small>Daqueles que iluminam tudo</small></div></div>
+        <div class="memory-frame"><div class="memory-placeholder"><span>03</span><b>Uma história</b><small>Que merece ser lembrada</small></div></div>
       </div>
-
-      <!-- Finale Content -->
-      <div class="finale-content" id="finale-content">
-        <p class="wolf-subtitle finale-message wolf-text-reveal" id="finale-message1"></p>
-        <p class="wolf-subtitle finale-message wolf-text-reveal" id="finale-message2" style="transition-delay: 0.8s; margin-top: var(--space-md);"></p>
-        <a href="flower.html" class="wolf-btn finale-btn wolf-text-reveal" id="btn-finale" style="transition-delay: 1.6s; margin-top: var(--space-lg);"></a>
-      </div>
+      <p class="memory-note">ESPAÇO RESERVADO PARA FOTOS DE VOCÊS</p>
+      <button class="button button--ghost" data-next="hug">Tem mais uma coisa <span aria-hidden="true">→</span></button>
     </section>
 
-  </div>
+    <section class="scene scene--hug" id="scene-hug" aria-labelledby="hug-title" hidden>
+      <div class="hug-light" aria-hidden="true"></div><div class="hug-particles" aria-hidden="true"></div>
+      <div class="hug-content reveal"><span class="hug-symbol">♡</span><p class="eyebrow">04 / UM GESTO SIMPLES</p><h2 id="hug-title">Se eu pudesse,<br>te daria um abraço<br><em>agora.</em></h2><p>Às vezes, um abraço consegue dizer tudo aquilo que as palavras não conseguem.</p><button class="button button--primary" id="hug-button">Receber um abraço <span aria-hidden="true">♡</span></button><p class="hug-after" id="hug-after" hidden>Sinta todo o carinho que existe neste gesto. Você é muito especial. ♡</p></div>
+    </section>
 
-  <!-- Experience Scripts -->
-  <script src="js/experience/config.js"></script>
-  <script src="js/experience/particles.js"></script>
-  <script src="js/experience/forest.js"></script>
-  <script src="js/experience/wolf.js"></script>
-  <script src="js/experience/constellation.js"></script>
-  <script src="js/experience/memories.js"></script>
-  <script src="js/experience/navigation.js"></script>
-  <script src="js/experience/app.js"></script>
+    <section class="scene scene--final" id="scene-final" aria-labelledby="final-title" hidden>
+      <div class="final-glow" aria-hidden="true"></div>
+      <div class="final-content reveal"><p class="eyebrow">05 / COM TODO O MEU AMOR</p><div class="final-flower" aria-hidden="true">✿</div><h2 id="final-title">O melhor ainda<br>está <em>por vir.</em></h2><p>Esta jornada termina aqui, mas o carinho que inspirou cada detalhe continua. Preparei uma última surpresa para você.</p><a class="button button--primary" href="flower.html">Descobrir minha surpresa <span aria-hidden="true">↗</span></a><span class="signature">FEITO COM AMOR, PARA SEMPRE.</span></div>
+    </section>
+
+    <nav class="scene-nav" aria-label="Navegação da jornada"><span class="nav-brand">M<span>✦</span></span><div class="nav-progress"><span id="progress-bar"></span></div><span class="nav-count" id="scene-count">01 — 06</span></nav>
+    <div class="message-toast" id="message-toast" role="status" aria-live="polite"></div>
+  </main>
 </body>
 </html>
