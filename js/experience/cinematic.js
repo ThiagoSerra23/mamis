@@ -15,23 +15,28 @@
   const count = document.getElementById("scene-count");
   const toast = document.getElementById("message-toast");
   let currentScene = 0;
+  let isTransitioning = false;
+  const transitionDelay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 650;
   const foundStars = new Set();
 
   function showScene(id) {
     const nextIndex = sceneIds.indexOf(id);
-    if (nextIndex < 0 || nextIndex === currentScene) return;
+    if (nextIndex < 0 || nextIndex === currentScene || isTransitioning) return;
 
-    scenes[currentScene].classList.remove("is-active");
+    isTransitioning = true;
+    const previousIndex = currentScene;
+    scenes[previousIndex].classList.remove("is-active");
     window.setTimeout(() => {
-      scenes[currentScene].hidden = true;
+      scenes[previousIndex].hidden = true;
       scenes[nextIndex].hidden = false;
       // Force a layout pass so the entrance transition always runs.
       void scenes[nextIndex].offsetWidth;
       scenes[nextIndex].classList.add("is-active");
       currentScene = nextIndex;
+      isTransitioning = false;
       progress.style.width = `${((currentScene + 1) / scenes.length) * 100}%`;
       count.textContent = `${String(currentScene + 1).padStart(2, "0")} — ${String(scenes.length).padStart(2, "0")}`;
-    }, 650);
+    }, transitionDelay);
   }
 
   document.querySelectorAll("[data-next]").forEach(button => {
