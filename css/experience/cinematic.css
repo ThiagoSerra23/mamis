@@ -22,7 +22,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--violet-bright);
 .ambient--two { background: #50258b; right: -25rem; bottom: -25rem; }
 .scene { position: absolute; inset: 0; min-height: 100svh; display: flex; align-items: center; justify-content: center; padding: clamp(2rem, 6vw, 6rem); overflow: hidden; opacity: 0; visibility: hidden; transform: scale(1.025); transition: opacity 900ms ease, transform 1300ms cubic-bezier(.2,.7,.1,1), visibility 900ms; }
 .scene.is-active { opacity: 1; visibility: visible; transform: scale(1); z-index: 2; }
-.scene[hidden] { display: none; }
+.scene[hidden] { display: none !important; }
 .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--violet-bright); font-size: .65rem; font-weight: 700; letter-spacing: .24em; }
 .eyebrow span { width: 22px; height: 1px; background: var(--violet); }
 h1, h2 { margin: 0; font: 500 clamp(3rem, 6.5vw, 6.8rem)/1.02 var(--display); letter-spacing: -.045em; }
