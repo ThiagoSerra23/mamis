@@ -159,3 +159,103 @@ p { color: var(--muted); line-height: 1.8; }
  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
  .reveal{opacity:1;transform:none}
 }
+
+
+/* ============================================
+   Hero Mamis — personagem em arte cinematográfica
+   ============================================ */
+.scene--character {
+  display: block;
+  padding: 0;
+  background: #090410;
+  transform: none;
+}
+.scene--character.is-active { transform: none; }
+.hero-artwork {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
+  animation: hero-artwork-arrive 1.8s cubic-bezier(.2,.7,.1,1) both,
+             hero-artwork-breathe 18s ease-in-out 1.8s infinite alternate;
+  filter: saturate(1.04) contrast(1.02);
+}
+@keyframes hero-artwork-arrive {
+  from { opacity: 0; transform: scale(1.055); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes hero-artwork-breathe {
+  from { transform: scale(1); }
+  to { transform: scale(1.045); }
+}
+/* Área clicável alinhada ao botão "Continuar" desenhado na arte. */
+.hero-continue {
+  position: absolute;
+  z-index: 8;
+  top: 59.8%;
+  right: 16.2%;
+  width: 12.2%;
+  height: 7.8%;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.hero-continue:hover {
+  border-color: #efb8ffbb;
+  background: #d98cff18;
+  box-shadow: 0 0 28px #d98cff55;
+}
+.hero-continue:focus-visible {
+  outline: 2px solid #f2caff;
+  outline-offset: 5px;
+  background: #d98cff22;
+}
+.hero-mobile-caption, .hero-scroll { display: none; }
+.scene--character .fireflies { z-index: 4; }
+@media (max-width: 800px) {
+  .scene--character { padding: 0; }
+  .hero-artwork {
+    object-position: 34% center;
+    animation: hero-artwork-arrive 1.5s ease both;
+  }
+  .hero-continue {
+    top: auto;
+    right: 50%;
+    bottom: 9%;
+    transform: translateX(50%);
+    width: min(70%, 280px);
+    height: 54px;
+    border: 1px solid #e9b4ff;
+    background: linear-gradient(110deg, #e8c8ffdd, #a65be9dd);
+    box-shadow: 0 0 28px #b96cff66;
+  }
+  .hero-continue::after {
+    content: "CONTINUAR  →";
+    color: #1a0927;
+    font: 700 .72rem var(--body);
+    letter-spacing: .18em;
+  }
+  .hero-continue:hover { transform: translate(50%, -2px); }
+  .hero-mobile-caption {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    bottom: calc(9% + 68px);
+    transform: translateX(-50%);
+    width: 90%;
+    margin: 0;
+    text-align: center;
+    color: #f5e7ff;
+    font: italic 1rem/1.5 var(--display);
+    text-shadow: 0 2px 14px #090410;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-artwork { animation: none; }
+}
