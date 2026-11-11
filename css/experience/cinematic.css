@@ -498,3 +498,55 @@ p { color: var(--muted); line-height: 1.8; }
   .care-content h2 { font-size: 2.65rem; }
   .care-content > p:not(.eyebrow) { font-size: .8rem; }
 }
+
+
+/* Handwritten-style keepsake letters, replacing the old star/memory cards. */
+.scene--memories {
+  overflow-y: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: clamp(5.5rem, 9vh, 7rem) 1.5rem 4.5rem;
+}
+.letters-heading { width:min(760px,100%); margin:0 auto 1.7rem; text-align:center; }
+.letters-heading .eyebrow { justify-content:center; }
+.letters-heading h2 { margin:.8rem 0 .7rem; font-size:clamp(2.7rem,5.5vw,4.5rem); }
+.letters-heading p:not(.eyebrow) { color:#c6b8d7; font-size:.9rem; }
+.letter-collection { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; width:min(820px,100%); margin:0 auto 1.3rem; }
+.love-letter {
+  align-self:start;
+  overflow:hidden;
+  border:1px solid #d5b5fa3d;
+  border-radius:5px 15px 5px 15px;
+  background:linear-gradient(145deg,#f2e5ff,#d9c4ef 75%,#c9b0e6);
+  color:#342044;
+  box-shadow:0 14px 35px #05020b55, inset 0 0 0 4px #fff5;
+  transform:rotate(-1deg);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.love-letter--tilt { transform:rotate(1deg); }
+.love-letter--last { grid-column:1/-1; width:min(500px,100%); justify-self:center; transform:rotate(-.4deg); }
+.love-letter[open] { transform:rotate(0) translateY(-3px); box-shadow:0 20px 42px #05020b77; }
+.love-letter summary { display:flex; flex-direction:column; align-items:flex-start; gap:.35rem; padding:1rem 1.15rem 1.05rem; cursor:pointer; list-style:none; min-height:142px; }
+.love-letter summary::-webkit-details-marker { display:none; }
+.letter-stamp { align-self:flex-end; color:#8755a9; font-size:1.15rem; }
+.letter-label { color:#805d96; font-size:.58rem; letter-spacing:.2em; font-weight:700; }
+.love-letter summary strong { font:600 1.12rem/1.3 var(--display); color:#39234a; }
+.letter-hint { display:flex; width:100%; justify-content:space-between; align-items:center; margin-top:auto; color:#745b82; font-size:.67rem; }
+.letter-hint b { font-size:1rem; font-weight:400; }
+.love-letter[open] .letter-hint b { transform:rotate(45deg); }
+.letter-inside { margin:0 .7rem .7rem; padding:1rem 1rem .9rem; border-top:1px dashed #9876ad99; background:#fff7; }
+.letter-inside > span { color:#8a659d; font-size:.56rem; letter-spacing:.18em; }
+.letter-inside p { margin:.65rem 0 .8rem; color:#44304f; font:500 .88rem/1.75 var(--display); }
+.letter-inside small { color:#805d96; font:italic .75rem var(--display); }
+.scene--memories .memory-note { text-align:center; max-width:620px; margin:1.2rem auto; }
+.scene--memories > .button { margin:0 auto; }
+@media(max-width:650px) {
+ .letter-collection { grid-template-columns:1fr; width:min(430px,100%); gap:.75rem; }
+ .love-letter,.love-letter--tilt,.love-letter--last { width:100%; grid-column:auto; transform:none; }
+ .love-letter summary { min-height:120px; }
+ .letters-heading h2 { font-size:2.75rem; }
+ .letter-inside p { font-size:.85rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .love-letter { transition:none; }
+}
