@@ -429,3 +429,72 @@ p { color: var(--muted); line-height: 1.8; }
   .chapter-moment p { font-size: .76rem; line-height: 1.7; }
   .chapter-ending { align-items: flex-start; }
 }
+
+
+/* Dedicated scene for the moment their bond became real outside the game. */
+.scene--care {
+  background:
+    radial-gradient(ellipse at 50% 42%, #56356f99 0%, transparent 52%),
+    linear-gradient(145deg, #1b102b, #10091d 78%);
+  overflow-y: auto;
+}
+.care-backdrop {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+.care-orbit {
+  position: absolute;
+  width: min(72vw, 680px);
+  aspect-ratio: 1;
+  border: 1px solid #d5b8ff20;
+  border-radius: 50%;
+  box-shadow: 0 0 90px #a879ff0b, inset 0 0 80px #a879ff08;
+}
+.care-orbit--one { animation: spin 75s linear infinite; border-left-color: transparent; }
+.care-orbit--two { width: min(58vw, 540px); border-style: dashed; animation: spin 95s linear infinite reverse; }
+.care-heart {
+  color: #d9bdff15;
+  font-size: clamp(12rem, 28vw, 24rem);
+  line-height: 1;
+  text-shadow: 0 0 90px #a879ff22;
+  animation: heart-beat 5s ease-in-out infinite;
+}
+.care-content {
+  position: relative;
+  z-index: 1;
+  width: min(700px, 100%);
+  margin: auto;
+  text-align: center;
+}
+.care-content .eyebrow { justify-content: center; }
+.care-content h2 {
+  margin: 1.1rem 0 1.5rem;
+  font-size: clamp(3rem, 6vw, 5.4rem);
+}
+.care-content > p:not(.eyebrow) {
+  max-width: 590px;
+  margin: 0 auto 1rem;
+  font-size: .94rem;
+  line-height: 1.9;
+}
+.care-content .care-emphasis {
+  margin: 1.6rem auto 1.7rem !important;
+  color: #eadbff;
+  font: italic clamp(1.1rem, 2vw, 1.35rem)/1.65 var(--display);
+}
+@media(max-width:800px) {
+  .scene--care { padding: 5.5rem 1.5rem 4.5rem; }
+  .care-content h2 { font-size: clamp(2.8rem, 10vw, 4rem); }
+  .care-content > p:not(.eyebrow) { font-size: .84rem; }
+  .care-orbit--one { width: 95vw; }
+  .care-orbit--two { width: 78vw; }
+}
+@media(max-width:430px) {
+  .scene--care { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .care-content h2 { font-size: 2.65rem; }
+  .care-content > p:not(.eyebrow) { font-size: .8rem; }
+}
