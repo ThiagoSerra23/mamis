@@ -59,25 +59,54 @@
           <h2 id="story-title">Era só um jogo.<br>Virou <em>família.</em></h2>
           <p>A gente se encontrou no GTA RP, sem imaginar que aquela amizade ia ganhar um espaço tão grande na vida. No começo, eram as histórias da cidade, as resenhas e o seu jeitinho baiano que sempre dava um jeito de arrancar uma risada minha.</p>
           <p>Quando eu me sentia sozinho, você aparecia. Nunca me deixava de lado. E, sem perceber, foi fazendo de um lugar virtual um cantinho onde eu me sentia acompanhado.</p>
-          <button class="button button--ghost" data-next="stars">Lembrar de mais coisas <span aria-hidden="true">→</span></button>
+          <button class="button button--ghost" data-next="chapter">Tem mais da nossa história <span aria-hidden="true">→</span></button>
         </div>
         <div class="story-art reveal" aria-hidden="true"><div class="story-ring"></div><div class="story-ring story-ring--inner"></div><div class="story-star">✦</div><span class="story-coordinate">23° 33' S<br>46° 38' W</span></div>
       </div>
     </section>
 
-    <section class="scene scene--stars" id="scene-stars" aria-labelledby="stars-title" hidden>
-      <div class="starfield" aria-hidden="true"></div>
-      <div class="stars-heading reveal"><p class="eyebrow">02 / COISAS QUE EU GUARDO</p><h2 id="stars-title">Cinco lembranças.<br><em>Um carinho enorme.</em></h2><p>Toque nas estrelas. Cada uma guarda um pedacinho da nossa história.</p></div>
-      <div class="constellation" id="constellation">
-        <svg class="star-lines" viewBox="0 0 600 380" preserveAspectRatio="none" aria-hidden="true"><path d="M95 110 L245 55 L420 125 L500 275 L265 325 L95 110"></path></svg>
-        <button class="star-node star-node--1" data-star="0" aria-label="Mensagem 1" aria-pressed="false"><span>✦</span></button>
-        <button class="star-node star-node--2" data-star="1" aria-label="Mensagem 2" aria-pressed="false"><span>✦</span></button>
-        <button class="star-node star-node--3" data-star="2" aria-label="Mensagem 3" aria-pressed="false"><span>✦</span></button>
-        <button class="star-node star-node--4" data-star="3" aria-label="Mensagem 4" aria-pressed="false"><span>✦</span></button>
-        <button class="star-node star-node--5" data-star="4" aria-label="Mensagem 5" aria-pressed="false"><span>✦</span></button>
+    <section class="scene scene--chapter" id="scene-chapter" aria-labelledby="chapter-title" hidden>
+      <div class="chapter-glow" aria-hidden="true"></div>
+      <div class="chapter-layout">
+        <div class="chapter-heading reveal">
+          <p class="eyebrow">02 / QUANDO O JOGO VIROU VIDA</p>
+          <h2 id="chapter-title">Eu gostava de estar perto.<br><em>Você se tornou parte da minha vida.</em></h2>
+          <p class="chapter-intro">E acho que foi assim, sem a gente perceber, que nossa história ficou tão especial.</p>
+        </div>
+
+        <div class="chapter-timeline">
+          <article class="chapter-moment reveal">
+            <span class="chapter-number">01</span>
+            <div>
+              <h3>Eu sempre dava um jeito de aparecer</h3>
+              <p>Por onde você ia nas cidades, eu acabava indo também. Não era por obrigação, muito menos por acaso. Eu gostava mesmo era de ficar perto de você, participar das resenhas e aproveitar mais um pouco da sua companhia.</p>
+            </div>
+          </article>
+
+          <article class="chapter-moment reveal">
+            <span class="chapter-number">02</span>
+            <div>
+              <h3>A chefinha da La de Israel</h3>
+              <p>Você nunca foi de abaixar a cabeça para ninguém. Se alguém chegava querendo arrumar confusão, eu aparecia para ficar do seu lado. Na cidade, eu era quase seu segurança particular — e olha que trabalho não faltava, KKKK.</p>
+            </div>
+          </article>
+
+          <article class="chapter-moment reveal">
+            <span class="chapter-number">03</span>
+            <div>
+              <h3>O que era do jogo passou a ser de verdade</h3>
+              <p>Mas o que mais marcou nossa história aconteceu fora da cidade. Você começou a se preocupar comigo de verdade. Percebia quando eu não estava bem, mesmo quando eu não falava nada, e ia atrás de mim. Foi aí que entendi que eu tinha encontrado alguém que cuidava de mim também na vida real.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="chapter-ending reveal">
+          <span aria-hidden="true">♡</span>
+          <p>Não foi uma única lembrança que fez você se tornar minha mãe. Foram todos esses pequenos momentos, juntos.</p>
+        </div>
+
+        <button class="button button--ghost chapter-next" data-next="memories">Continuar nossa história <span aria-hidden="true">→</span></button>
       </div>
-      <div class="message-panel" id="message-panel" role="status" aria-live="polite"><span class="message-index">UMA MENSAGEM PARA VOCÊ</span><p id="star-message">Escolha uma estrela para revelar sua mensagem.</p></div>
-      <div class="stars-footer"><span id="star-progress">0 DE 5 DESCOBERTAS</span><button class="button button--ghost" id="stars-next" disabled>Continuar <span aria-hidden="true">→</span></button></div>
     </section>
 
     <section class="scene scene--memories" id="scene-memories" aria-labelledby="memories-title" hidden>
@@ -86,9 +115,9 @@
       <div class="memory-grid reveal">
         <article class="memory-frame"><div class="memory-placeholder"><span>01</span><b>Onde você ia...</b><small>Eu acabava aparecendo também. Gostava de estar por perto.</small></div></article>
         <article class="memory-frame memory-frame--featured"><div class="memory-placeholder"><span>02</span><b>La de Israel</b><small>Sua presença impunha respeito. E eu virava seu segurança particular no RP.</small></div></article>
-        <article class="memory-frame"><div class="memory-placeholder"><span>03</span><b>Do jogo pra vida</b><small>Você percebeu quando eu não estava bem, mesmo sem eu precisar falar.</small></div></article>
+        <article class="memory-frame"><div class="memory-placeholder"><span>03</span><b>Do jogo pra vida</b><small>Você percebe quando eu não estou bem, mesmo sem eu precisar falar.</small></div></article>
       </div>
-      <p class="memory-note">ESPAÇO RESERVADO PARA FOTOS DE VOCÊS</p>
+      <p class="memory-note">CADA MOMENTO DESSE TEM UM LUGAR ESPECIAL NA MINHA HISTÓRIA.</p>
       <button class="button button--ghost" data-next="hug">Tem mais uma coisa <span aria-hidden="true">→</span></button>
     </section>
 
