@@ -292,3 +292,140 @@ p { color: var(--muted); line-height: 1.8; }
   .scene--memories .memory-placeholder small { font-size: .68rem; }
   .scene--memories > .button { margin-bottom: 1rem; }
 }
+
+
+/* Narrative chapter: a história contada em sequência, sem mensagens soltas. */
+.scene--chapter {
+  background:
+    radial-gradient(ellipse at 78% 18%, #4b2b6a55 0%, transparent 42%),
+    radial-gradient(ellipse at 15% 85%, #7a4aa522 0%, transparent 45%),
+    linear-gradient(135deg, #160e24, #10091d 72%);
+  overflow-y: auto;
+  align-items: flex-start;
+  padding-top: clamp(6rem, 10vh, 7.5rem);
+  padding-bottom: 5rem;
+}
+.chapter-glow {
+  position: absolute;
+  width: min(55vw, 650px);
+  aspect-ratio: 1;
+  top: 12%;
+  right: -14%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #b78aff12, transparent 68%);
+  pointer-events: none;
+}
+.chapter-layout {
+  position: relative;
+  width: min(920px, 100%);
+  margin: auto;
+}
+.chapter-heading {
+  max-width: 820px;
+  margin: 0 auto 2.2rem;
+  text-align: center;
+}
+.chapter-heading .eyebrow { justify-content: center; }
+.chapter-heading h2 {
+  margin: .9rem 0 1rem;
+  font-size: clamp(2.5rem, 5.2vw, 4.7rem);
+}
+.chapter-heading h2 em { display: inline-block; }
+.chapter-intro {
+  max-width: 570px;
+  margin: 0 auto;
+  font-size: .95rem;
+}
+.chapter-timeline {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+.chapter-timeline::before {
+  content: "";
+  position: absolute;
+  top: 1.2rem;
+  bottom: 1.2rem;
+  left: 22px;
+  width: 1px;
+  background: linear-gradient(transparent, #c49bfa66 12%, #c49bfa66 88%, transparent);
+}
+.chapter-moment {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 1.2rem;
+  padding: 1.1rem 1.35rem 1.15rem 0;
+  border-bottom: 1px solid #c6a3ff20;
+  background: linear-gradient(90deg, #b58aff0a, transparent 75%);
+}
+.chapter-number {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #c6a3ff66;
+  border-radius: 50%;
+  color: #e2caff;
+  background: #1b102b;
+  font: italic 1rem var(--display);
+  box-shadow: 0 0 24px #a879ff20;
+}
+.chapter-moment h3 {
+  margin: .1rem 0 .45rem;
+  color: #f3eaff;
+  font: 500 clamp(1.05rem, 1.8vw, 1.35rem) var(--display);
+}
+.chapter-moment p {
+  max-width: 680px;
+  margin: 0;
+  color: #c0b2d1;
+  font-size: .88rem;
+  line-height: 1.75;
+}
+.chapter-ending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  width: min(680px, 100%);
+  margin: 1.5rem auto 1.4rem;
+  text-align: center;
+}
+.chapter-ending span {
+  flex: 0 0 auto;
+  color: #d5b5ff;
+  font-size: 1.8rem;
+  text-shadow: 0 0 20px #a879ff88;
+}
+.chapter-ending p {
+  margin: 0;
+  color: #e3d4f5;
+  font: italic 1.05rem/1.6 var(--display);
+}
+.chapter-next { display: flex; width: fit-content; margin: 0 auto; }
+.scene--chapter .reveal:nth-child(2) { transition-delay: .12s; }
+.scene--chapter .reveal:nth-child(3) { transition-delay: .22s; }
+@media(max-width: 800px) {
+  .scene--chapter { padding: 5.5rem 1.5rem 4.5rem; }
+  .chapter-heading { margin-bottom: 1.5rem; }
+  .chapter-heading h2 { font-size: clamp(2.45rem, 8vw, 3.6rem); }
+  .chapter-intro { font-size: .85rem; }
+  .chapter-moment { gap: .8rem; padding-right: 0; }
+  .chapter-moment p { font-size: .82rem; }
+  .chapter-ending p { font-size: .98rem; }
+}
+@media(max-width: 430px) {
+  .scene--chapter { padding-left: 1.15rem; padding-right: 1.15rem; }
+  .chapter-heading h2 { font-size: 2.45rem; }
+  .chapter-timeline::before { left: 18px; }
+  .chapter-moment { grid-template-columns: 38px 1fr; gap: .75rem; }
+  .chapter-number { width: 37px; height: 37px; font-size: .9rem; }
+  .chapter-moment h3 { font-size: 1rem; }
+  .chapter-moment p { font-size: .76rem; line-height: 1.7; }
+  .chapter-ending { align-items: flex-start; }
+}
