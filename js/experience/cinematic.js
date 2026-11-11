@@ -2,7 +2,7 @@
   "use strict";
 
   // Cada etapa representa uma parte da história, em ordem cronológica.
-  const sceneIds = ["hero", "story", "chapter", "memories", "hug", "final"];
+  const sceneIds = ["hero", "story", "chapter", "care", "memories", "hug", "final"];
   const scenes = sceneIds.map(id => document.getElementById(`scene-${id}`));
   const progress = document.getElementById("progress-bar");
   const count = document.getElementById("scene-count");
