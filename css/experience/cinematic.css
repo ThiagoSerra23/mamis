@@ -161,122 +161,94 @@ p { color: var(--muted); line-height: 1.8; }
 }
 
 
-/* ============================================
-   Hero Mamis — personagem em arte cinematográfica
-   ============================================ */
-.scene--character {
-  display: block;
-  padding: 0;
-  background: #090410;
-  transform: none;
-}
-.scene--character.is-active { transform: none; }
-.hero-artwork {
+/* Hero: mantém a floresta, o texto e a composição original; troca apenas o guardião. */
+.character-stage {
   position: absolute;
-  inset: 0;
+  z-index: 4;
+  width: min(49vw, 650px);
+  height: min(76vh, 730px);
+  right: 3.5%;
+  bottom: 1%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+.hero-character {
+  position: relative;
+  z-index: 2;
+  display: block;
   width: 100%;
   height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center center;
-  animation: hero-artwork-arrive 1.8s cubic-bezier(.2,.7,.1,1) both,
-             hero-artwork-breathe 18s ease-in-out 1.8s infinite alternate;
-  filter: saturate(1.04) contrast(1.02);
+  object-fit: contain;
+  object-position: center bottom;
+  filter: saturate(1.08) contrast(1.04) drop-shadow(0 0 18px #d69bff44) drop-shadow(0 22px 32px #08051099);
+  -webkit-mask-image: radial-gradient(ellipse 76% 82% at 50% 49%, #000 58%, #000d 76%, transparent 100%);
+  mask-image: radial-gradient(ellipse 76% 82% at 50% 49%, #000 58%, #000d 76%, transparent 100%);
+  animation: character-arrive 1.4s cubic-bezier(.2,.7,.1,1) both, character-float 6s ease-in-out 1.4s infinite;
+  transform-origin: 50% 90%;
 }
-@keyframes hero-artwork-arrive {
-  from { opacity: 0; transform: scale(1.055); }
-  to { opacity: 1; transform: scale(1); }
+@keyframes character-arrive {
+  from { opacity: 0; transform: translateY(28px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
-@keyframes hero-artwork-breathe {
-  from { transform: scale(1); }
-  to { transform: scale(1.045); }
+@keyframes character-float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
 }
-/* Área clicável alinhada ao botão "Continuar" desenhado na arte. */
-.hero-continue {
+.character-aura {
   position: absolute;
-  z-index: 8;
-  top: 59.8%;
-  right: 16.2%;
-  width: 12.2%;
-  height: 7.8%;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  background: transparent;
-  cursor: pointer;
-  transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+  z-index: 1;
+  width: 76%;
+  height: 60%;
+  bottom: 8%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #c78bff55 0%, #8d4dcc2b 42%, transparent 72%);
+  filter: blur(26px);
+  animation: aura-pulse 5s ease-in-out infinite;
 }
-.hero-continue:hover {
-  border-color: #efb8ffbb;
-  background: #d98cff18;
-  box-shadow: 0 0 28px #d98cff55;
+.character-halo {
+  position: absolute;
+  z-index: 0;
+  width: 76%;
+  aspect-ratio: 1;
+  top: 9%;
+  border: 1px solid #d7b7ff30;
+  border-radius: 50%;
+  box-shadow: 0 0 55px #a879ff18, inset 0 0 45px #a879ff0d;
 }
-.hero-continue:focus-visible {
-  outline: 2px solid #f2caff;
-  outline-offset: 5px;
-  background: #d98cff22;
+.character-halo--one { animation: spin 70s linear infinite; border-left-color: transparent; border-bottom-color: transparent; }
+.character-halo--two { width: 88%; top: 3%; border-right-color: transparent; border-top-color: transparent; animation: spin 95s linear infinite reverse; }
+.character-caption {
+  position: absolute;
+  z-index: 3;
+  bottom: 2%;
+  color: #e2c9ffb8;
+  font-size: .55rem;
+  letter-spacing: .24em;
+  text-align: center;
+  text-shadow: 0 2px 12px #10091d;
 }
-.hero-mobile-caption, .hero-scroll { display: none; }
-.scene--character .fireflies { z-index: 4; }
-@media (max-width: 800px) {
-  .scene--character { padding: 0; }
-  .hero-artwork {
-    object-position: 34% center;
-    animation: hero-artwork-arrive 1.5s ease both;
+.scene--hero .hero-copy { z-index: 6; }
+.scene--hero .fireflies { z-index: 5; }
+@media(max-width:800px) {
+  .scene--hero { align-items: flex-start; padding-top: 16vh; }
+  .scene--hero .hero-copy { width: 100%; max-width: 600px; margin: 0; }
+  .scene--hero .hero-copy h1 { font-size: clamp(3.1rem, 12vw, 5.2rem); }
+  .scene--hero .hero-copy .lead { max-width: 320px; font-size: .88rem; }
+  .character-stage {
+    width: min(76vw, 430px);
+    height: 52vh;
+    right: -7%;
+    bottom: 0;
+    opacity: .9;
   }
-  .hero-continue {
-    top: auto;
-    right: 50%;
-    bottom: 9%;
-    transform: translateX(50%);
-    width: min(70%, 280px);
-    height: 54px;
-    border: 1px solid #e9b4ff;
-    background: linear-gradient(110deg, #e8c8ffdd, #a65be9dd);
-    box-shadow: 0 0 28px #b96cff66;
-  }
-  .hero-continue::after {
-    content: "CONTINUAR  →";
-    color: #1a0927;
-    font: 700 .72rem var(--body);
-    letter-spacing: .18em;
-  }
-  .hero-continue:hover { transform: translate(50%, -2px); }
-  .hero-mobile-caption {
-    display: block;
-    position: absolute;
-    z-index: 5;
-    left: 50%;
-    bottom: calc(9% + 68px);
-    transform: translateX(-50%);
-    width: 90%;
-    margin: 0;
-    text-align: center;
-    color: #f5e7ff;
-    font: italic 1rem/1.5 var(--display);
-    text-shadow: 0 2px 14px #090410;
-  }
+  .character-caption { bottom: 1%; font-size: .45rem; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .hero-artwork { animation: none; }
+@media(max-width:430px) {
+  .scene--hero { padding-top: 14vh; }
+  .character-stage { width: 88vw; height: 45vh; right: -13%; }
 }
-
-
-/* Acessibilidade: título disponível para leitores de tela sem ocupar a tela. */
-.sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+@media(prefers-reduced-motion:reduce) {
+  .hero-character { animation: none; }
 }
-
-/* Evita que o texto alternativo de uma imagem ausente apareça sobre a abertura. */
-.hero-artwork {
-  color: transparent;
-  font-size: 0;
-}
-.hero-artwork.is-unavailable { display: none; }
