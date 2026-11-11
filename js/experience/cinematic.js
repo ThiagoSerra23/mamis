@@ -2,11 +2,11 @@
   "use strict";
 
   const messages = [
-    "Obrigado por todos os momentos em que esteve presente.",
-    "Seu carinho faz diferença até nos dias mais difíceis.",
-    "Existem coisas que palavras não conseguem explicar.",
-    "Você merece receber todo o carinho que oferece.",
-    "Este pequeno presente é apenas uma forma de dizer o quanto você é especial."
+    "Quando eu me sentia sozinho, você chegava com aquele seu jeito baiano e sempre dava um jeito de me fazer rir.",
+    "Por onde você ia nas cidades, eu aparecia também. Eu gostava mesmo era de ficar perto de você.",
+    "Na La de Israel, a chefinha não abaixava a cabeça para ninguém. E eu estava por perto para defender minha mãe — dentro do RP, claro! KKKK.",
+    "Você percebe quando eu não estou bem, até quando fico quieto. Esse cuidado fora do jogo significa mais do que eu consigo explicar.",
+    "Obrigado por confiar em mim, me apoiar e me proteger. Talvez eu não demonstre muito, mas tenho um carinho enorme por você, mãe."
   ];
 
   const sceneIds = ["hero", "story", "stars", "memories", "hug", "final"];
