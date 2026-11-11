@@ -1,15 +1,6 @@
 (() => {
   "use strict";
 
-  // Se a arte ainda não foi copiada para assets, escondemos o ícone/texto quebrado.
-  const heroArtwork = document.querySelector(".hero-artwork");
-  if (heroArtwork) {
-    heroArtwork.addEventListener("error", () => {
-      heroArtwork.classList.add("is-unavailable");
-      console.warn("Arte da personagem não encontrada: assets/images/hero/mamis-character.webp");
-    }, { once: true });
-  }
-
   const messages = [
     "Obrigado por todos os momentos em que esteve presente.",
     "Seu carinho faz diferença até nos dias mais difíceis.",
