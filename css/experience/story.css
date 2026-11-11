@@ -1,0 +1,123 @@
+/* ============================================
+   story.css — Wolf Story Section Styles
+   Scoped under .wolf-experience
+   ============================================ */
+
+/* ---- Story Container ---- */
+.wolf-experience .story-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* ---- Story Text ---- */
+.wolf-experience .story-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.5vw + 0.5rem, 1.45rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--wolf-silver);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+/* ---- Story Text Highlight ---- */
+.wolf-experience .story-text--highlight {
+  font-size: clamp(1.25rem, 1.8vw + 0.5rem, 1.65rem);
+  color: var(--wolf-white);
+  font-weight: 500;
+  text-shadow: 0 0 30px rgba(76, 141, 255, 0.12);
+}
+
+/* ---- Story Fade-In Animation ---- */
+.wolf-experience .story-fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: story-text-appear var(--duration-slow) var(--ease-smooth) forwards;
+}
+
+/* Stagger delays for sequential text blocks */
+.wolf-experience .story-fade-in:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.wolf-experience .story-fade-in:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.wolf-experience .story-fade-in:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.wolf-experience .story-fade-in:nth-child(4) {
+  animation-delay: 1.4s;
+}
+
+@keyframes story-text-appear {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Story Divider ---- */
+.wolf-experience .story-divider {
+  width: 100%;
+  max-width: 100px;
+  height: 1px;
+  margin: var(--space-md) auto;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--wolf-glow) 50%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .wolf-experience .story-container {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .wolf-experience .story-text {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+  }
+
+  .wolf-experience .story-text--highlight {
+    font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+  }
+
+  .wolf-experience .story-divider {
+    max-width: 70px;
+    margin: var(--space-sm) auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .wolf-experience .story-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .wolf-experience .story-text--highlight {
+    font-size: 1.1rem;
+  }
+}

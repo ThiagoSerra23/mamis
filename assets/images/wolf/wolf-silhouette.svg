@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" width="100%" height="100%">
+  <defs>
+    <!-- Silver-Blue Gradient for the Wolf Fur -->
+    <linearGradient id="wolfFurGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8D4E3" stop-opacity="0.95" />
+      <stop offset="35%" stop-color="#8293A9" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#4C8DFF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0B1B30" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Glowing Blue Gradient for Wolf Back & Highlights -->
+    <linearGradient id="wolfHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F4F7FC" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#8293A9" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#07111F" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Eye Radial Glow -->
+    <radialGradient id="eyeGlowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="40%" stop-color="#6BA3FF" />
+      <stop offset="75%" stop-color="#4C8DFF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#07111F" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Rocky Ledge Gradient -->
+    <linearGradient id="rockGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#182A42" />
+      <stop offset="60%" stop-color="#0B1B30" />
+      <stop offset="100%" stop-color="#050C16" />
+    </linearGradient>
+
+    <!-- Filter for Eye Glow -->
+    <filter id="eyeGlowFilter" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Filter for Body Aura -->
+    <filter id="wolfAuraFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="auraBlur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="auraBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rocky Outcrop / Cliff under the wolf -->
+  <path d="M 40,430 L 110,380 L 160,370 L 220,380 L 280,360 L 350,375 L 430,355 L 490,440 L 40,440 Z" 
+        fill="url(#rockGrad)" opacity="0.8" />
+  <path d="M 120,385 L 210,382 L 290,368 L 360,380 L 430,365" 
+        stroke="#4C8DFF" stroke-width="1.5" stroke-opacity="0.3" fill="none" />
+
+  <!-- Outer Soft Wolf Glow Silhouette -->
+  <g filter="url(#wolfAuraFilter)" opacity="0.6">
+    <path d="M 330,120 
+             C 335,100 348,70 355,55 
+             C 358,48 365,58 362,75 
+             C 368,60 378,52 384,56
+             C 388,60 382,85 378,102
+             C 395,115 425,140 435,160
+             C 442,175 435,185 415,185
+             C 390,185 370,195 355,210
+             C 345,230 340,260 338,300
+             C 335,340 330,375 325,385
+             L 305,385
+             C 308,350 310,310 295,290
+             C 285,320 280,355 275,385
+             L 255,385
+             C 260,340 265,305 255,275
+             C 245,278 220,280 200,280
+             C 180,315 175,355 170,385
+             L 150,385
+             C 155,345 160,305 165,270
+             C 150,265 135,275 125,300
+             C 115,335 110,365 105,385
+             L 85,385
+             C 90,340 98,290 115,255
+             C 90,270 70,300 55,335
+             C 45,355 35,370 25,365
+             C 20,355 30,330 45,295
+             C 65,250 95,225 130,215
+             C 160,205 190,200 230,195
+             C 270,190 295,175 315,150
+             Z"
+          fill="#4C8DFF" opacity="0.4" />
+  </g>
+
+  <!-- Main Wolf Silhouette Body -->
+  <g class="wolf-body-group">
+    <!-- Main Body Path -->
+    <path class="wolf-main-body"
+          d="M 330,120 
+             C 336,98 349,68 356,52 
+             C 360,45 367,56 364,74 
+             C 370,58 380,50 386,54
+             C 390,58 384,84 380,102
+             C 398,115 428,140 438,158
+             C 445,172 438,182 418,183
+             C 395,184 374,194 358,208
+             C 348,228 342,258 340,298
+             C 337,338 332,374 326,385
+             L 306,385
+             C 309,350 312,308 296,288
+             C 286,318 281,354 276,385
+             L 256,385
+             C 261,340 266,304 256,274
+             C 246,277 221,279 201,279
+             C 181,314 176,354 171,385
+             L 151,385
+             C 156,345 161,304 166,269
+             C 151,264 136,274 126,299
+             C 116,334 111,364 106,385
+             L 86,385
+             C 91,340 99,289 116,254
+             C 91,269 71,299 56,334
+             C 46,354 36,369 26,364
+             C 21,354 31,329 46,294
+             C 66,249 96,224 131,214
+             C 161,204 191,199 231,194
+             C 271,189 296,174 316,149
+             Z"
+          fill="url(#wolfFurGrad)" />
+
+    <!-- Back Spine & Fur Highlight Strokes -->
+    <path d="M 386,54 C 390,75 382,98 376,108 C 395,122 422,145 435,160"
+          stroke="#F4F7FC" stroke-width="1.8" stroke-opacity="0.75" fill="none" stroke-linecap="round" />
+    <path d="M 330,120 C 315,148 285,178 240,192 C 190,202 155,212 130,224 C 95,240 68,270 48,305 C 32,335 25,355 27,363"
+          stroke="#C8D4E3" stroke-width="2" stroke-opacity="0.8" fill="none" stroke-linecap="round" />
+
+    <!-- Chest & Neck Mane Accent / Fluff Details -->
+    <path d="M 358,208 C 370,195 388,185 410,183"
+          stroke="#8293A9" stroke-width="1.2" stroke-opacity="0.6" fill="none" />
+    <path d="M 345,170 C 335,185 330,205 332,225"
+          stroke="#6BA3FF" stroke-width="1" stroke-opacity="0.4" fill="none" />
+    <path d="M 360,140 C 352,155 348,175 350,190"
+          stroke="#4C8DFF" stroke-width="1.2" stroke-opacity="0.35" fill="none" />
+    
+    <!-- Tail Fur Strands -->
+    <path d="M 125,235 C 95,260 70,295 55,335" 
+          stroke="#8293A9" stroke-width="1.5" stroke-opacity="0.5" fill="none" />
+    <path d="M 105,255 C 82,280 60,315 48,348" 
+          stroke="#C8D4E3" stroke-width="1" stroke-opacity="0.6" fill="none" />
+
+    <!-- Ear Details -->
+    <path d="M 348,65 L 358,90" stroke="#4C8DFF" stroke-width="1.2" stroke-opacity="0.5" />
+    <path d="M 374,68 L 378,92" stroke="#4C8DFF" stroke-width="1.2" stroke-opacity="0.5" />
+
+    <!-- Luminous Blue Eye -->
+    <g class="wolf-eye-group" filter="url(#eyeGlowFilter)">
+      <!-- Outer Glow -->
+      <ellipse cx="388" cy="118" rx="7" ry="5" fill="url(#eyeGlowGrad)" transform="rotate(-15 388 118)" />
+      <!-- Sharp Inner Iris/Pupil -->
+      <ellipse cx="388" cy="118" rx="3.5" ry="2" fill="#FFFFFF" transform="rotate(-15 388 118)" />
+      <circle cx="389" cy="117" r="1" fill="#E0F0FF" />
+    </g>
+
+    <!-- Subtle Snout & Whisker Highlights -->
+    <path d="M 430,162 L 436,160" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.8" />
+    <circle cx="434" cy="160" r="1.5" fill="#4C8DFF" opacity="0.8" />
+  </g>
+</svg>
+

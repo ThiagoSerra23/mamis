@@ -1,0 +1,777 @@
+/* ============================================
+   transitions.css — Scene Transition Effects
+   Scoped under .wolf-experience
+   ============================================ */
+
+/* ---- Scene States ---- */
+.wolf-experience .scene-active {
+  display: flex !important;
+  opacity: 1;
+}
+
+.wolf-experience .scene-hidden {
+  display: none !important;
+  opacity: 0;
+}
+
+/* ---- Scene Enter Animation ---- */
+.wolf-experience .scene-enter {
+  animation: sceneEnter 0.6s var(--ease-smooth) forwards;
+}
+
+@keyframes sceneEnter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Scene Exit Animation ---- */
+.wolf-experience .scene-exit {
+  animation: sceneExit 0.6s var(--ease-smooth) forwards;
+}
+
+@keyframes sceneExit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+/* ---- Transition Overlay ---- */
+.wolf-experience .transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--wolf-deep);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s var(--ease-smooth);
+}
+
+.wolf-experience .transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ---- Text Typewriter Effect ---- */
+.wolf-experience .text-typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--wolf-glow);
+  animation: typewriter 3s steps(40) forwards, typeBlink 0.75s step-end infinite;
+  width: 0;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes typeBlink {
+  50% { border-color: transparent; }
+}
+
+/* ---- Staggered Children Fade ---- */
+.wolf-experience .stagger-fade > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: staggerFadeIn 0.6s var(--ease-smooth) forwards;
+}
+
+.wolf-experience .stagger-fade > *:nth-child(1) { animation-delay: 0.1s; }
+.wolf-experience .stagger-fade > *:nth-child(2) { animation-delay: 0.25s; }
+.wolf-experience .stagger-fade > *:nth-child(3) { animation-delay: 0.4s; }
+.wolf-experience .stagger-fade > *:nth-child(4) { animation-delay: 0.55s; }
+.wolf-experience .stagger-fade > *:nth-child(5) { animation-delay: 0.7s; }
+.wolf-experience .stagger-fade > *:nth-child(6) { animation-delay: 0.85s; }
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Finale Darkness Overlay ---- */
+.wolf-experience .finale-darkness {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(7, 17, 31, 0.4) 40%,
+    rgba(7, 17, 31, 0.8) 70%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* ---- Canvas Background Layer ---- */
+.wolf-experience .wolf-canvas-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-bg);
+  pointer-events: none;
+}
+
+/* ---- Entrance Content ---- */
+.wolf-experience .entrance-content {
+  position: relative;
+  z-index: var(--z-content);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  max-width: 700px;
+}
+
+/* ---- Story Content ---- */
+.wolf-experience .story-content {
+  position: relative;
+  z-index: var(--z-content);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  padding: var(--space-md);
+}
+
+.wolf-experience .story-text-container {
+  margin-bottom: var(--space-sm);
+}
+
+/* ---- Hug Content ---- */
+.wolf-experience .hug-content {
+  position: relative;
+  z-index: var(--z-content);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  padding: var(--space-md);
+}
+
+.wolf-experience .hug-after {
+  position: relative;
+  z-index: var(--z-content);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* ---- Finale Content ---- */
+.wolf-experience .finale-content {
+  position: relative;
+  z-index: var(--z-content);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  padding: var(--space-md);
+}
+
+.wolf-experience .finale-message {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.wolf-experience .finale-btn {
+  display: inline-flex;
+}
+
+/* ---- Memories Content Wrapper ---- */
+.wolf-experience .memories-content {
+  position: relative;
+  z-index: var(--z-content);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: var(--space-md);
+  gap: var(--space-sm);
+}
+
+.wolf-experience .memories-subtitle {
+  margin-bottom: var(--space-md);
+}
+
+.wolf-experience .memories-note {
+  margin-top: var(--space-md);
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* ---- Memories Gallery Grid ---- */
+.wolf-experience .memories-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+/* ---- Memory Card ---- */
+.wolf-experience .memory-card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(11, 27, 48, 0.6);
+  border: 1px solid rgba(76, 141, 255, 0.15);
+  transition: transform var(--duration-fast) var(--ease-smooth),
+              box-shadow var(--duration-fast) var(--ease-smooth),
+              border-color var(--duration-fast) var(--ease-smooth);
+}
+
+.wolf-experience .memory-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(76, 141, 255, 0.15);
+  border-color: rgba(76, 141, 255, 0.35);
+}
+
+.wolf-experience .memory-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 0.75rem;
+  color: var(--wolf-gray);
+}
+
+.wolf-experience .memory-card-icon {
+  width: 36px;
+  height: 36px;
+  opacity: 0.4;
+}
+
+.wolf-experience .memory-card-label {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.wolf-experience .memory-card-plus {
+  font-size: 2rem;
+  opacity: 0.3;
+  font-weight: 300;
+}
+
+.wolf-experience .memory-card--add {
+  border-style: dashed;
+}
+
+.wolf-experience .memory-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wolf-experience .memory-card-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: var(--wolf-white);
+  font-size: 0.85rem;
+}
+
+/* ---- Memories Background ---- */
+.wolf-experience .memories-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--wolf-deep) 0%, var(--wolf-night) 50%, var(--wolf-deep) 100%);
+  z-index: var(--z-bg);
+}
+
+/* ---- Constellation Container ---- */
+.wolf-experience .constellation-container {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-content);
+}
+
+.wolf-experience .constellation-star {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFFFF 0%, rgba(255,215,0,0.8) 40%, rgba(76,141,255,0.4) 70%, transparent 100%);
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s var(--ease-bounce), box-shadow 0.3s ease;
+  box-shadow: 0 0 10px 3px rgba(255,215,0,0.4), 0 0 20px 5px rgba(76,141,255,0.2);
+  animation: starPulse 3s ease-in-out infinite;
+}
+
+.wolf-experience .constellation-star::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(76,141,255,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.wolf-experience .constellation-star:hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 15px 5px rgba(255,215,0,0.6), 0 0 30px 10px rgba(76,141,255,0.3);
+}
+
+.wolf-experience .constellation-star.star-visited {
+  opacity: 0.5;
+  animation: none;
+}
+
+@keyframes starPulse {
+  0%, 100% { box-shadow: 0 0 10px 3px rgba(255,215,0,0.4), 0 0 20px 5px rgba(76,141,255,0.2); }
+  50% { box-shadow: 0 0 15px 5px rgba(255,215,0,0.6), 0 0 30px 8px rgba(76,141,255,0.3); }
+}
+
+.wolf-experience .star-point,
+.wolf-experience .star-glow {
+  display: none; /* Handled by the parent star styling */
+}
+
+.wolf-experience .star-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0;
+  pointer-events: none;
+}
+
+/* ---- Constellation SVG Lines ---- */
+.wolf-experience .constellation-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.wolf-experience .constellation-line {
+  stroke: rgba(76, 141, 255, 0.25);
+  stroke-width: 0.3;
+  stroke-dasharray: 2 2;
+}
+
+/* ---- Message Card ---- */
+.wolf-experience .constellation-message-card {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-smooth);
+}
+
+.wolf-experience .constellation-message-card.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.wolf-experience .message-card-inner {
+  position: relative;
+  background: rgba(11, 27, 48, 0.95);
+  border: 1px solid rgba(76, 141, 255, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 0 40px rgba(76, 141, 255, 0.1), 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform 0.4s var(--ease-bounce);
+}
+
+.wolf-experience .constellation-message-card.visible .message-card-inner {
+  transform: scale(1);
+}
+
+.wolf-experience .message-card-text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--wolf-silver);
+  text-align: center;
+}
+
+.wolf-experience .message-card-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--wolf-gray);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.wolf-experience .message-card-close:hover {
+  opacity: 1;
+}
+
+/* ---- Constellation Prompt ---- */
+.wolf-experience .constellation-prompt {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-content);
+  font-size: 0.9rem;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+/* ---- Constellation Continue Button ---- */
+.wolf-experience .constellation-continue {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-content);
+}
+
+/* ---- Hug Animation ---- */
+.wolf-experience .hug-animation-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: var(--space-md) auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wolf-experience .hug-glow-circle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(76,141,255,0.6) 0%, rgba(107,163,255,0.3) 40%, transparent 70%);
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wolf-experience .hug-animation-container.hug-active .hug-glow-circle {
+  animation: hugExpand 2s var(--ease-smooth) forwards;
+}
+
+@keyframes hugExpand {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(8);
+    opacity: 0;
+  }
+}
+
+/* ---- Forest Background (shared across scenes) ---- */
+.wolf-experience .forest-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: var(--z-bg);
+  background: linear-gradient(180deg, #07111F 0%, #091726 30%, #0B1B30 70%, #0d2038 100%);
+}
+
+.wolf-experience .forest-bg--story,
+.wolf-experience .forest-bg--hug,
+.wolf-experience .forest-bg--finale {
+  opacity: 0.7;
+}
+
+/* ---- Forest Trees (BEM variant with --) ---- */
+.wolf-experience .forest-trees {
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  z-index: 5;
+}
+
+.wolf-experience .forest-trees--back {
+  height: 55%;
+  z-index: 5;
+}
+
+.wolf-experience .forest-trees--mid {
+  height: 50%;
+  z-index: 8;
+}
+
+.wolf-experience .forest-trees--front {
+  height: 45%;
+  z-index: 12;
+}
+
+/* Tree shapes generated with clip-path */
+.wolf-experience .forest-tree {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wolf-experience .forest-trees--back .forest-tree {
+  background: #0d1f2d;
+}
+
+.wolf-experience .forest-trees--mid .forest-tree {
+  background: #091820;
+}
+
+.wolf-experience .forest-trees--front .forest-tree {
+  background: #060e18;
+}
+
+/* Tree 1 - Full width back layer silhouette */
+.wolf-experience .forest-tree--1 {
+  clip-path: polygon(
+    0% 100%, 0% 70%, 3% 45%, 5% 38%, 6% 68%, 10% 40%, 12% 32%, 14% 50%,
+    18% 55%, 20% 30%, 22% 55%, 27% 48%, 29% 25%, 31% 48%, 36% 52%, 38% 28%,
+    40% 20%, 42% 40%, 47% 45%, 49% 28%, 51% 35%, 56% 48%, 58% 30%, 60% 22%,
+    62% 38%, 68% 50%, 70% 32%, 72% 42%, 77% 44%, 79% 26%, 81% 36%, 86% 48%,
+    88% 32%, 90% 42%, 95% 55%, 98% 45%, 100% 55%, 100% 100%
+  );
+}
+
+.wolf-experience .forest-tree--2 {
+  clip-path: polygon(
+    0% 100%, 0% 65%, 4% 50%, 7% 42%, 9% 55%, 14% 45%, 16% 35%, 18% 50%,
+    23% 55%, 25% 38%, 28% 48%, 33% 52%, 35% 30%, 38% 42%, 43% 55%, 45% 40%,
+    48% 48%, 52% 35%, 55% 45%, 58% 50%, 63% 42%, 65% 28%, 68% 38%, 72% 48%,
+    75% 35%, 78% 42%, 82% 50%, 85% 38%, 88% 45%, 92% 55%, 95% 48%, 100% 60%, 100% 100%
+  );
+}
+
+.wolf-experience .forest-tree--3 {
+  clip-path: polygon(
+    0% 100%, 0% 60%, 5% 45%, 8% 35%, 10% 48%, 15% 40%, 18% 52%,
+    22% 45%, 25% 32%, 28% 45%, 32% 55%, 35% 42%, 38% 28%, 42% 40%,
+    45% 52%, 48% 38%, 52% 48%, 55% 35%, 58% 45%, 62% 55%, 65% 40%,
+    68% 48%, 72% 35%, 75% 42%, 78% 52%, 82% 42%, 85% 50%, 90% 42%,
+    95% 55%, 100% 50%, 100% 100%
+  );
+}
+
+.wolf-experience .forest-tree--4 {
+  opacity: 0.8;
+  clip-path: polygon(
+    0% 100%, 0% 55%, 8% 42%, 12% 35%, 15% 48%, 20% 38%, 25% 50%,
+    30% 42%, 35% 30%, 40% 42%, 45% 55%, 50% 38%, 55% 45%, 60% 52%,
+    65% 40%, 70% 48%, 75% 35%, 80% 45%, 85% 55%, 90% 45%, 95% 52%, 100% 58%, 100% 100%
+  );
+}
+
+.wolf-experience .forest-tree--5 {
+  opacity: 0.7;
+  clip-path: polygon(
+    0% 100%, 0% 58%, 5% 48%, 10% 38%, 15% 50%, 20% 42%, 25% 55%,
+    30% 45%, 35% 35%, 40% 48%, 45% 52%, 50% 40%, 55% 50%, 60% 42%,
+    65% 35%, 70% 45%, 75% 55%, 80% 42%, 85% 50%, 90% 58%, 95% 48%, 100% 55%, 100% 100%
+  );
+}
+
+/* Mid-layer trees */
+.wolf-experience .forest-tree--6 {
+  clip-path: polygon(
+    0% 100%, 0% 65%, 5% 50%, 10% 38%, 12% 52%, 18% 42%, 22% 30%,
+    25% 42%, 30% 55%, 35% 40%, 40% 48%, 45% 35%, 50% 45%, 55% 55%,
+    60% 42%, 65% 50%, 70% 38%, 75% 48%, 80% 55%, 85% 42%, 90% 50%, 95% 58%, 100% 55%, 100% 100%
+  );
+}
+
+.wolf-experience .forest-tree--7 {
+  opacity: 0.85;
+  clip-path: polygon(
+    0% 100%, 0% 60%, 8% 48%, 12% 35%, 15% 45%, 20% 55%, 25% 42%,
+    30% 50%, 35% 38%, 40% 48%, 45% 55%, 50% 40%, 55% 48%, 60% 35%,
+    65% 45%, 70% 55%, 75% 42%, 80% 50%, 85% 38%, 90% 48%, 100% 52%, 100% 100%
+  );
+}
+
+.wolf-experience .forest-tree--8 {
+  opacity: 0.9;
+  clip-path: polygon(
+    0% 100%, 0% 55%, 5% 42%, 10% 50%, 15% 38%, 20% 48%, 25% 35%,
+    30% 45%, 35% 55%, 40% 42%, 45% 50%, 50% 38%, 55% 45%, 60% 55%,
+    65% 42%, 70% 50%, 75% 38%, 80% 48%, 85% 55%, 90% 42%, 95% 50%, 100% 58%, 100% 100%
+  );
+}
+
+.wolf-experience .forest-tree--9 {
+  opacity: 0.75;
+  clip-path: polygon(
+    0% 100%, 0% 58%, 5% 45%, 10% 52%, 15% 40%, 20% 50%, 25% 42%,
+    30% 55%, 35% 42%, 40% 50%, 45% 38%, 50% 48%, 55% 55%, 60% 42%,
+    65% 48%, 70% 35%, 75% 45%, 80% 55%, 85% 42%, 90% 50%, 100% 55%, 100% 100%
+  );
+}
+
+/* Front-layer trees (largest, darkest) */
+.wolf-experience .forest-tree--10 {
+  clip-path: polygon(
+    0% 100%, 0% 68%, 3% 55%, 5% 45%, 7% 35%, 9% 45%, 12% 60%,
+    15% 55%, 18% 42%, 20% 30%, 22% 42%, 25% 58%, 100% 75%, 100% 100%
+  );
+}
+
+.wolf-experience .forest-tree--11 {
+  clip-path: polygon(
+    0% 75%, 75% 58%, 78% 42%, 80% 30%, 82% 42%, 85% 55%,
+    88% 42%, 90% 35%, 92% 45%, 95% 58%, 97% 50%, 100% 65%, 100% 100%, 0% 100%
+  );
+}
+
+/* ---- Forest Fog (BEM variant with --) ---- */
+.wolf-experience .forest-fog {
+  position: absolute;
+  bottom: 5%;
+  left: -20%;
+  width: 140%;
+  height: 30%;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.wolf-experience .forest-fog--back {
+  background: linear-gradient(to top, rgba(11,27,48,0.4) 0%, transparent 100%);
+  animation: fogDrift 120s linear infinite;
+}
+
+.wolf-experience .forest-fog--front {
+  background: linear-gradient(to top, rgba(11,27,48,0.25) 0%, transparent 80%);
+  animation: fogDriftReverse 90s linear infinite;
+  bottom: 0;
+  height: 20%;
+}
+
+@keyframes fogDrift {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fogDriftReverse {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-8%); }
+  100% { transform: translateX(0); }
+}
+
+/* ---- Forest Moon ---- */
+.wolf-experience .forest-moon {
+  position: absolute;
+  top: 8%;
+  right: 15%;
+  z-index: 3;
+}
+
+.wolf-experience .forest-moon__body {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 40%, #e8e4d4 0%, #d4cfc0 40%, #c8c4b5 70%, #bab6a8 100%);
+  box-shadow:
+    0 0 20px 8px rgba(200, 195, 170, 0.2),
+    0 0 50px 15px rgba(200, 195, 170, 0.1),
+    0 0 80px 30px rgba(200, 195, 170, 0.05);
+  animation: moonGlow 6s ease-in-out infinite;
+}
+
+.wolf-experience .forest-moon__glow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,195,170,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@keyframes moonGlow {
+  0%, 100% { box-shadow: 0 0 20px 8px rgba(200,195,170,0.2), 0 0 50px 15px rgba(200,195,170,0.1); }
+  50% { box-shadow: 0 0 30px 12px rgba(200,195,170,0.3), 0 0 60px 20px rgba(200,195,170,0.15); }
+}
+
+/* ---- Responsive for Mobile ---- */
+@media (max-width: 768px) {
+  .wolf-experience .constellation-star {
+    width: 18px;
+    height: 18px;
+  }
+
+  .wolf-experience .constellation-prompt {
+    white-space: normal;
+    text-align: center;
+    width: 80%;
+    bottom: 15%;
+  }
+
+  .wolf-experience .memories-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .wolf-experience .forest-moon__body {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wolf-experience .memories-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wolf-experience .message-card-inner {
+    padding: 1.5rem;
+  }
+}
+

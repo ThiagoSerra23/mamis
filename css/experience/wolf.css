@@ -1,0 +1,160 @@
+/* ============================================
+   wolf.css — Wolf Visual Styles
+   Scoped under .wolf-experience
+   ============================================ */
+
+/* ---- Wolf Container ---- */
+.wolf-experience .wolf-container {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-wolf);
+  width: clamp(180px, 35vw, 340px);
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s var(--ease-smooth);
+}
+
+/* ---- Wolf Silhouette (holds the SVG) ---- */
+.wolf-experience .wolf-silhouette {
+  position: relative;
+  width: 100%;
+  filter: brightness(0);
+  transition: filter 1.5s var(--ease-smooth);
+}
+
+.wolf-experience .wolf-silhouette svg,
+.wolf-experience .wolf-silhouette img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- Wolf Eyes — Glowing ---- */
+.wolf-experience .wolf-eyes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.wolf-experience .wolf-eye {
+  position: absolute;
+  width: 8px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFFFF 0%, #6BA3FF 50%, #4C8DFF 80%, transparent 100%);
+  box-shadow:
+    0 0 6px 2px rgba(76, 141, 255, 0.8),
+    0 0 14px 4px rgba(76, 141, 255, 0.5),
+    0 0 30px 8px rgba(76, 141, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.8s ease-in, transform 0.15s ease-out;
+  z-index: 5;
+}
+
+.wolf-experience .wolf-eye--left {
+  top: 24.5%;
+  left: 76%;
+}
+
+.wolf-experience .wolf-eye--right {
+  top: 25.5%;
+  left: 79%;
+}
+
+/* Eye Glow Pulse */
+@keyframes wolfEyePulse {
+  0%, 100% {
+    box-shadow:
+      0 0 6px 2px rgba(76, 141, 255, 0.8),
+      0 0 14px 4px rgba(76, 141, 255, 0.5),
+      0 0 30px 8px rgba(76, 141, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 10px 3px rgba(76, 141, 255, 1),
+      0 0 20px 6px rgba(76, 141, 255, 0.6),
+      0 0 40px 12px rgba(76, 141, 255, 0.3);
+  }
+}
+
+.wolf-experience .wolf-eye[style*="opacity: 1"],
+.wolf-experience .wolf-eye.glowing {
+  animation: wolfEyePulse 3s ease-in-out infinite;
+}
+
+/* ---- Wolf Glow Aura ---- */
+.wolf-experience .wolf-glow-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(76, 141, 255, 0.12) 0%,
+    rgba(76, 141, 255, 0.05) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ---- Wolf Entrance Animation ---- */
+@keyframes wolfEntrance {
+  0% {
+    opacity: 0;
+    filter: brightness(0) blur(4px);
+    transform: translateX(-50%) scale(0.95);
+  }
+  40% {
+    opacity: 1;
+    filter: brightness(0) blur(0);
+    transform: translateX(-50%) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) blur(0);
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* ---- Wolf Breathing ---- */
+@keyframes wolfBreathe {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.015) translateY(-2px);
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .wolf-experience .wolf-container {
+    width: clamp(140px, 50vw, 240px);
+    bottom: 22%;
+  }
+
+  .wolf-experience .wolf-eye {
+    width: 6px;
+    height: 3.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wolf-experience .wolf-container {
+    width: clamp(120px, 55vw, 200px);
+    bottom: 24%;
+  }
+}
+

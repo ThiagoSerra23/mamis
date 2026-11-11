@@ -1,0 +1,39 @@
+:root {
+  /* Colors */
+  --wolf-deep: #07111F;
+  --wolf-night: #0B1B30;
+  --wolf-glow: #4C8DFF;
+  --wolf-silver: #C8D4E3;
+  --wolf-white: #F4F7FC;
+  --wolf-gray: #8293A9;
+  --wolf-accent: #6BA3FF;
+  --wolf-gold: #FFD700;
+  
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-accent: 'Manrope', sans-serif;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 0.3s;
+  --duration-normal: 0.6s;
+  --duration-slow: 1.2s;
+  
+  /* Z-index layers */
+  --z-bg: 1;
+  --z-forest: 10;
+  --z-fog: 20;
+  --z-wolf: 30;
+  --z-content: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+}
