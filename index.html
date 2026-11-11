@@ -18,22 +18,36 @@
     <div class="ambient ambient--two" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
 
-    <section class="scene scene--hero scene--character is-active" id="scene-hero" aria-labelledby="hero-title">
-      <!-- A arte contém a composição cinematográfica; os controles reais continuam acessíveis. -->
-      <img
-        class="hero-artwork"
-        src="assets/images/hero/mamis-character.webp"
-        alt="Personagem de cabelo loiro e roupas rosas em uma floresta fantástica iluminada por uma lua violeta."
-        fetchpriority="high"
-        decoding="async"
-      >
+    <section class="scene scene--hero is-active" id="scene-hero" aria-labelledby="hero-title">
+      <div class="sky" aria-hidden="true"><span class="moon"></span><span class="moon-halo"></span></div>
+      <div class="forest forest--far" aria-hidden="true"></div>
+      <div class="forest forest--mid" aria-hidden="true"></div>
+      <div class="forest forest--near" aria-hidden="true"></div>
+      <div class="mist mist--one" aria-hidden="true"></div>
+      <div class="mist mist--two" aria-hidden="true"></div>
       <canvas class="fireflies" id="fireflies" aria-hidden="true"></canvas>
-      <h1 class="sr-only" id="hero-title">Mamis — Você é o meu maior capítulo, minha eterna inspiração.</h1>
-      <button class="hero-continue" type="button" data-next="story" aria-label="Continuar para a jornada">
-        <span class="sr-only">Continuar</span>
-      </button>
-      <p class="hero-mobile-caption" aria-hidden="true">Você é o meu maior capítulo,<br>minha eterna inspiração.</p>
-      <div class="hero-scroll" aria-hidden="true"><span></span> ROLE PARA EXPLORAR</div>
+
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> UMA JORNADA FEITA COM AMOR <span></span></p>
+        <h1 id="hero-title">Para alguém<br><em>extraordinário.</em></h1>
+        <p class="lead">Algumas pessoas são luz, mesmo quando tudo ao redor parece noite.</p>
+        <button class="button button--primary" data-next="story">Começar a jornada <span aria-hidden="true">↗</span></button>
+      </div>
+
+      <div class="character-stage">
+        <div class="character-aura" aria-hidden="true"></div>
+        <div class="character-halo character-halo--one" aria-hidden="true"></div>
+        <div class="character-halo character-halo--two" aria-hidden="true"></div>
+        <img
+          class="hero-character"
+          src="assets/images/hero/mamis-character.webp"
+          alt="Personagem dela, com cabelos loiros, roupas rosas e tatuagens."
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span class="character-caption">A PERSONAGEM PRINCIPAL DESTA HISTÓRIA</span>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><span></span> UMA HISTÓRIA ESPECIAL</div>
     </section>
 
     <section class="scene scene--story" id="scene-story" aria-labelledby="story-title" hidden>
